@@ -282,12 +282,15 @@ table#cmp th.on{background:var(--accent);color:#fff}
 </section>
 
 <section id="sec-plan">
-  <div><h2>三個行程方案 <small>第 2 步</small></h2><p class="sub">三個方案的流程一樣，差在日期。行程三（3/8 上船）當天是媽媽生日。每個方案再分「登船當天飛」與「前一天（週日）先飛」兩種，先看下方並排的總價，再切換出發方式看逐日行程。</p></div>
+  <div><h2>三個行程方案 <small>第 2 步</small></h2><p class="sub">三個方案的流程一樣，差在日期。行程三（3/8 上船）當天是媽媽生日。每個方案再分「登船當天飛」與「前一天（週日）先飛」兩種，機票分經濟艙與商務艙兩排，先看下方並排的總價，再切換出發方式看逐日行程。</p></div>
   <div class="seg" role="group" aria-label="出發方式">
     <button type="button" class="segb" data-mode="same" aria-pressed="true">登船當天飛（週一出發）</button>
     <button type="button" class="segb" data-mode="early" aria-pressed="false">前一天先飛（週日出發）<span class="pill">建議</span></button>
   </div>
   <div class="plans" id="plans"></div>
+  <h3 class="sh">同樣三個方案，改搭商務艙</h3>
+  <p class="sub">班機一樣是華航 CI 753 去、CI 754 回，只把機票換成商務艙，其餘項目不變。出發與回程都可以用貴賓室，說明在第 3 步「商務艙貴賓室」。</p>
+  <div class="plans" id="plans-biz"></div>
   <h3 class="sh">六種組合並排（新台幣，各項為 2 人金額，綠色列是平均每人）</h3>
   <div class="wrap"><table class="w1" id="cmp"></table></div>
   <p class="src" id="cmp-note"></p>
@@ -339,17 +342,33 @@ table#cmp th.on{background:var(--accent);color:#fff}
     <tr><td>華航 CI 753<small class="m">08:20 → 13:05</small></td><td>長榮 BR 216<small class="m">15:45 → 20:15，分段購票</small></td><td class="num">14,504</td><td>未列出</td><td class="num">22,183</td><td>未列出</td></tr>
     <tr><td>長榮 BR 215<small class="m">09:35 → 14:30</small></td><td>長榮 BR 216<small class="m">15:45 → 20:15</small></td><td>未列出</td><td class="num">31,766</td><td>未查</td><td>未查</td></tr>
     <tr><th class="grp" colspan="6">前一天先飛：週日去程（1/17、1/31），2026/11/15 查詢</th></tr>
-    <tr class="best"><td>華航 CI 753<small class="m">08:20 → 13:05</small></td><td>華航 CI 754<small class="m">14:25 → 19:05</small></td><td class="num">11,324</td><td>未查</td><td class="num">22,081<small class="m">Google 標示豪華經濟艙</small></td><td>未查</td></tr>
+    <tr class="best"><td>華航 CI 753<small class="m">08:20 → 13:05</small></td><td>華航 CI 754<small class="m">14:25 → 19:05</small></td><td class="num">11,324</td><td class="num">31,775</td><td class="num">22,081<small class="m">Google 標示豪華經濟艙</small></td><td class="num">37,778</td></tr>
     </tbody>
   </table></div>
   <div class="wrap"><table>
-    <thead><tr><th>行程三（2026/11/15 查詢）</th><th>去程</th><th>回程 3/12（五）</th><th>經濟艙</th></tr></thead>
+    <thead><tr><th>行程三（2026/11/15 查詢）</th><th>去程</th><th>回程 3/12（五）</th><th>經濟艙</th><th>商務艙</th></tr></thead>
     <tbody>
-    <tr><td>登船當天飛 3/8（一）</td><td>華航 CI 753<small class="m">08:20 → 13:05</small></td><td>華航 CI 754<small class="m">14:25 → 19:05</small></td><td class="num">15,465</td></tr>
-    <tr class="best"><td>前一天先飛 3/7（日）</td><td>華航 CI 753<small class="m">08:20 → 13:05</small></td><td>華航 CI 754<small class="m">14:25 → 19:05</small></td><td class="num">15,465</td></tr>
+    <tr><td>登船當天飛 3/8（一）</td><td>華航 CI 753<small class="m">08:20 → 13:05</small></td><td>華航 CI 754<small class="m">14:25 → 19:05</small></td><td class="num">15,465</td><td class="num">31,775</td></tr>
+    <tr class="best"><td>前一天先飛 3/7（日）</td><td>華航 CI 753<small class="m">08:20 → 13:05</small></td><td>華航 CI 754<small class="m">14:25 → 19:05</small></td><td class="num">15,465</td><td class="num">31,775</td></tr>
     </tbody>
   </table></div>
-  <p class="src">當天飛推薦第一列：華航 CI 753 在 13:05 抵達，趕得上登船。長榮 BR 215 下午 2:30 才抵達，要先確認登船截止時間。華航晚上 19:55 的去程班機隔天凌晨才抵達，已排除。「分段購票」是兩家航空各買一張，行李費另計。前一天先飛不用趕船，也可以選晚一點的週日班機，例如新航 14:10 → 18:55，但我只看到 Google 列出的起價（1/17 每人 13,396、1/31 每人 18,511，搭配的回程不一定是週五下午），沒有確認搭配 CI 754 的價格。週日去程的商務艙沒有查。</p>
+  <p class="src">當天飛推薦第一列：華航 CI 753 在 13:05 抵達，趕得上登船。長榮 BR 215 下午 2:30 才抵達，要先確認登船截止時間。華航晚上 19:55 的去程班機隔天凌晨才抵達，已排除。「分段購票」是兩家航空各買一張，行李費另計。前一天先飛不用趕船，也可以選晚一點的週日班機，例如新航 14:10 → 18:55，但我只看到 Google 列出的起價（1/17 每人 13,396、1/31 每人 18,511，搭配的回程不一定是週五下午），沒有確認搭配 CI 754 的價格。商務艙價格：行程一、二當天飛是 2026/11/12–13 查詢，週日去程與行程三是 2026/11/15 查詢。</p>
+
+  <h3 class="sh" id="lounge">商務艙貴賓室（華航）</h3>
+  <p class="sub">搭華航商務艙，去程在桃園、回程在樟宜都可以用貴賓室，登機前有地方坐著吃東西、休息，對媽媽比較輕鬆。以下取自華航官網「機場與貴賓室」頁面（2026/11/15 查詢）。</p>
+  <div class="grid">
+    <div class="card"><h3>去程：桃園機場第一航廈</h3><div class="big">華航貴賓室（A 側）</div><small>位置：第一航廈 4 樓，過證照查驗台後上樓，近 A 側登機門<br>開放：05:00–23:30，趕得上 08:20 的 CI 753<br>座位：專屬區 74 座、商務區 154 座<br>設施：熱食餐飲、淋浴間、洗手間、行李間、商務櫃檯、Wi-Fi、航班動態<br>另有 B 側貴賓室（65 座），視營運情況彈性開放</small></div>
+    <div class="card"><h3>回程：樟宜機場第三航廈</h3><div class="big">Marhaba Lounge</div><small>位置：第三航廈南側，過境大廳 3 樓（過出境關之後）<br>開放：官網寫「視航班時間開放」，沒有列固定時間<br>座位：70 座<br>設施：熱食餐飲、淋浴間、洗手間、商務櫃檯、Wi-Fi、電視、閱讀刊物<br>這是華航的合作貴賓室，不是華航自營</small></div>
+    <div class="card"><h3>報到時間</h3><div class="big">起飛前 60 分鐘關櫃</div><small>桃園：飛新加坡在第一航廈報到<br>樟宜：第三航廈，起飛前 180 分鐘開櫃。CI 754 是 14:25 起飛，約 11:25 開櫃，報到後大約有 2 小時可以待在貴賓室</small></div>
+  </div>
+  <ul class="notes">
+    <li><b>價差：</b>商務艙比經濟艙每人多：行程一約 TWD 20,451、行程二約 17,534、行程三約 16,310（當天飛）。行程二經濟艙本來就貴，所以價差最小。<span class="tag">航班</span></li>
+    <li><b>兩人都要是商務艙：</b>貴賓室憑商務艙登機證入場。能不能帶同行的經濟艙旅客、有沒有年齡或停留時間限制，我沒有查，以華航規定為準。<span class="tag todo">待確認</span></li>
+    <li><b>其他好處：</b>商務艙通常有專屬報到櫃檯、優先登機、較高的託運行李額度與可平躺或大角度後躺的座位。CI 753／754 實際派的機型與座椅我沒有查。<span class="tag todo">一般資訊</span><span class="tag todo">待確認</span></li>
+    <li><b>餐飲預估沒有扣：</b>貴賓室有熱食，回程日的機場午餐（S$30）可以省下，但預估合計沒有扣掉這筆。</li>
+    <li><b>登船當天飛仍然要早起：</b>商務艙不會改變 08:20 起飛、13:05 抵達的時間，趕船的風險一樣。</li>
+  </ul>
+  <p class="src">來源：<a href="https://www.china-airlines.com/tw/zh/prepare-for-the-fly/information/airport-and-vip-lounge" target="_blank" rel="noopener">華航官網：機場與貴賓室</a>。貴賓室可能更換或調整開放時間，出發前請再看一次。</p>
 
   <h3 class="sh">額外花費估計：餐飲、Grab 與門票</h3>
   <p class="sub">船上的餐點含在船費裡，所以只估在岸上的餐飲、機場與郵輪中心和飯店之間的叫車，以及濱海灣花園溫室門票。Uber 在新加坡沒有營運，叫車用 Grab。台幣欄依試算表的新幣匯率換算（預設 1 新幣 = 26 元台幣），改匯率會跟著變。</p>
@@ -430,6 +449,12 @@ table#cmp th.on{background:var(--accent);color:#fff}
         </optgroup>
         <optgroup label="行程三 3/8 或 3/7→3/12 經濟艙">
           <option value="15465">華航 CI 753 + CI 754，15,465</option>
+        </optgroup>
+        <optgroup label="行程一 前一天飛、行程三 商務艙">
+          <option value="31775">華航 CI 753 + CI 754，31,775</option>
+        </optgroup>
+        <optgroup label="行程二 前一天飛 商務艙">
+          <option value="37778">華航 CI 753 + CI 754，37,778</option>
         </optgroup>
       </select></label>
     <label for="hotel0">登船前一晚飯店（週日，含稅，新台幣）
@@ -761,7 +786,7 @@ const rows=(o,m)=>[...o[m],...o.common];
 const sumOf=a=>a.reduce((x,r)=>x+r[1],0);
 const DEF={same:{ride:sumOf(rows(RIDE,"same")),meals:sumOf(rows(MEAL,"same"))},early:{ride:sumOf(rows(RIDE,"early")),meals:sumOf(rows(MEAL,"early"))}};
 const PLANS={
-  1:{name:"行程一",range:{same:"1/18（一）→ 1/22（五）",early:"1/17（日）→ 1/22（五）"},tag:"最低價航次",d0:"1/17",d:["1/18","1/19","1/20","1/21","1/22"],sail:598,flight:{same:11315,early:11324},hotel:36834,hotel0:36690,
+  1:{name:"行程一",range:{same:"1/18（一）→ 1/22（五）",early:"1/17（日）→ 1/22（五）"},tag:"最低價航次",d0:"1/17",d:["1/18","1/19","1/20","1/21","1/22"],sail:598,flight:{same:11315,early:11324},biz:{same:31766,early:31775},hotel:36834,hotel0:36690,
      points:["陽台房最低價，避開農曆春節","機票與飯店都比行程二便宜","1 月雷陣雨較多，要帶傘"],
      notes:[
       ["最低價航次","這是我讀到的陽台房最低價，2 人含稅含小費約 TWD 4.26 萬。"],
@@ -772,7 +797,7 @@ const PLANS={
       ["天氣","1 月是東北季風前段，雷陣雨機率較高，要帶摺疊傘或輕便雨衣。"],
       ["金沙整修","金沙 2027/1/6 起大廳與入口區整修，若住金沙請向飯店確認對入住的影響。"]
      ]},
-  2:{name:"行程二",range:{same:"2/1（一）→ 2/5（五）",early:"1/31（日）→ 2/5（五）"},tag:"春節前夕",d0:"1/31",d:["2/1","2/2","2/3","2/4","2/5"],sail:691,flight:{same:20235,early:22081},hotel:36834,hotel0:36690,
+  2:{name:"行程二",range:{same:"2/1（一）→ 2/5（五）",early:"1/31（日）→ 2/5（五）"},tag:"春節前夕",d0:"1/31",d:["2/1","2/2","2/3","2/4","2/5"],sail:691,flight:{same:20235,early:22081},biz:{same:37769,early:37778},hotel:36834,hotel0:36690,
      points:["回程 2/5 是除夕，機票比行程一貴約 9 千到 1 萬","2/1–4 是春節前一週，郵輪價還沒漲","春節氣氛濃，但店家與人潮要留意"],
      notes:[
       ["春節前夕","農曆春節初一是 2/6（我依農曆推算，沒有在官方網站查證），所以 2/5 週五是除夕，回程當天就是除夕。"],
@@ -788,7 +813,7 @@ const PLANS={
       ["天氣","2 月是東北季風後段，通常比 1 月乾，但年年差異大，仍要帶傘。"],
       ["金沙整修","金沙整修公告涵蓋 2027/1/6 到 2028/6/30，大廳與入口區自 1/6 起，空中花園與泳池自 5 月起分階段施工。"]
      ]},
-  3:{name:"行程三",range:{same:"3/8（一）→ 3/12（五）",early:"3/7（日）→ 3/12（五）"},tag:"媽媽生日",bday:true,d0:"3/7",d:["3/8","3/9","3/10","3/11","3/12"],sail:913.54,flight:{same:15465,early:15465},hotel:30575,hotel0:32103,
+  3:{name:"行程三",range:{same:"3/8（一）→ 3/12（五）",early:"3/7（日）→ 3/12（五）"},tag:"媽媽生日",bday:true,d0:"3/7",d:["3/8","3/9","3/10","3/11","3/12"],sail:913.54,flight:{same:15465,early:15465},biz:{same:31775,early:31775},hotel:30575,hotel0:32103,
      points:["3/8 上船日就是媽媽生日","郵輪是一般價，每人比行程一貴約 USD 316","金沙 3 月比 1、2 月便宜約 6,000"],
      notes:[
       ["媽媽生日","3/8（一）是上船日，也是媽媽生日。出發 3 週前在迪士尼官網登記 Special Request，船方會在餐廳安排慶祝。細節看第 5 步「媽媽生日可以怎麼慶祝」。"],
@@ -802,7 +827,9 @@ const PLANS={
       ["金沙整修","金沙整修公告涵蓋 2027/1/6 到 2028/6/30，大廳與入口區自 1/6 起，空中花園與泳池自 5 月起分階段施工。"]
      ]}
 };
-let cur=1, mode="same";
+let cur=1, mode="same", cab="eco";
+const CABS={eco:"經濟艙",biz:"商務艙"};
+const fare=(p,m,c)=>(c==="biz"?p.biz:p.flight)[m];
 const TAGS={o:["官網",0],f:["航班",0],m:["官網地圖",0],e:["估計",1],r:["建議",1],q:["待確認",1],x:["非官方",1],g:["一般資訊",1]};
 const tg=(...k)=>k.map(x=>`<span class="tag${TAGS[x][1]?" todo":""}">${TAGS[x][0]}</span>`).join("");
 const L=(u,t)=>`<a class="lk" href="${u}" target="_blank" rel="noopener">${t}</a>`;
@@ -820,8 +847,10 @@ function li(t,x,k,l){return `<li><time>${t}</time><span>${x}${k?tg(...k.split(" 
 const day=(title,sum,items,open)=>`<details${open?" open":""}><summary><span class="d">${title}</span><span class="s">${sum}</span></summary><div class="body"><ol class="tl">${items.join("")}</ol></div></details>`;
 function days(p,m){
   const d=p.d, out=[], BD=p.bday?"媽媽生日晚餐：事先登記 Special Request，請餐廳安排慶生。":"";
+  const LG1=cab==="biz"?li("06:15","商務艙：過安檢與證照查驗後上 4 樓，到華航貴賓室（A 側，05:00 開放）吃早餐、休息","o"):"";
+  const LG5=cab==="biz"?li("12:15","商務艙：過出境關後到第三航廈南側過境大廳 3 樓的 Marhaba Lounge 吃午餐、休息，有熱食與淋浴間。開放時間視航班而定","o"):li("12:15","機場午餐","g",C("約",15,"／人"));
   if(m==="early") out.push(day(`第 0 天 ${p.d0}（週日）飛新加坡，住金沙`,"08:20 起飛 → 13:05 抵達 → 入住金沙、休息 → 晚上看 Spectra",[
-    li("05:30","抵達桃園機場，辦理 CI 753 報到與託運，以起飛前約 3 小時為準","r"),
+    li("05:30","抵達桃園機場，辦理 CI 753 報到與託運，以起飛前約 3 小時為準","r"),LG1,
     li("08:20","桃園起飛，華航 CI 753","f"),
     li("13:05","抵達樟宜機場","f"),
     li("13:45","完成入境、領行李","e"),
@@ -842,7 +871,7 @@ function days(p,m){
     li("19:00",BD+"晚餐。託運行李約這時候起陸續送到房間，官網說可能到晚上才送達，泳衣、藥品放隨身包","o e")],true));
   else out.push(day(`第 1 天 ${d[0]}（週一）上船日`,"08:20 起飛 → 13:05 抵達 → 約 14:30 登船",[
     li("報到開放後","線上報到並選擇到港時段（Port Arrival Time），準備護照與 Navigator App 或 Port Arrival Form。開放日期我沒有查到","q"),
-    li("05:30","抵達桃園機場，辦理 CI 753 報到與託運，以起飛前約 3 小時為準","r"),
+    li("05:30","抵達桃園機場，辦理 CI 753 報到與託運，以起飛前約 3 小時為準","r"),LG1,
     li("08:20","桃園起飛，華航 CI 753","f"),
     li("13:05","抵達樟宜機場","f"),
     li("13:45","完成入境、領行李，搭計程車或叫車到濱海灣郵輪中心","e"),
@@ -886,41 +915,49 @@ function days(p,m){
     li("10:00","回飯店取行李、退房。金沙退房時間 11:00","g"),
     li("10:45","搭車到樟宜機場，金沙到機場約 16 公里","e",C("Grab 約",30)),
     li("11:25","抵達機場，辦理 CI 754 報到與託運，以國際線起飛前 3 小時為準","r"),
-    li("12:15","機場午餐","g",C("約",15,"／人")),
+    LG5,
     li("14:25","樟宜起飛，華航 CI 754","f"),
     li("19:05","抵達桃園","f")]));
   return out.join("")+`<p class="src">時間軸以金沙為例，住浮爾頓酒店走去金沙約 24 分鐘，住 The Clan 約 25 分鐘。${m==="early"?"":"登船當天飛，航班延誤可能趕不上登船。"}實際上下船時段以迪士尼訂位後寄來的文件與 Navigator App 為準。費用標籤的台幣依試算表的新幣匯率換算。</p>`;
 }
-function total(p,m){
+function total(p,m,c){
   const fx=+$("fx").value, tip=+$("tip").value, sgd=+$("sgd").value, tk=+$("ticket").value;
-  const cruise=p.sail*2*fx+tip*3*2*fx, air=p.flight[m]*2, hotel0=m==="early"?p.hotel0:0, hotel=p.hotel;
+  const cruise=p.sail*2*fx+tip*3*2*fx, air=fare(p,m,c)*2, hotel0=m==="early"?p.hotel0:0, hotel=p.hotel;
   const meals=DEF[m].meals*sgd, ride=DEF[m].ride*sgd, ticket=tk*2*sgd;
   return {cruise,air,hotel0,hotel,meals,ride,ticket,sum:cruise+air+hotel0+hotel+meals+ride+ticket};
 }
 function renderPlans(){
-  $("plans").innerHTML=[1,2,3].map(n=>{
-    const p=PLANS[n], t=total(p,mode), a=total(p,"same"), b=total(p,"early");
-    return `<div class="plan" data-on="${n===cur}"><h3>${p.name}<small>${p.range[mode]}　${p.tag}</small></h3>
-    <div class="tot"><span class="big">${f(t.sum/2)}</span><span class="src">平均每人（${MODES[mode].name}，含稅、含小費）。2 人合計 ${f(t.sum)}，下列各項是 2 人金額</span></div>
-    <dl><dt>郵輪（含稅含小費）</dt><dd>${f(t.cruise)}</dd><dt>機票（含稅，每人 ${fmt(p.flight[mode])}）</dt><dd>${f(t.air)}</dd>${mode==="early"?`<dt>金沙週日一晚（含稅）</dt><dd>${f(t.hotel0)}</dd>`:""}<dt>金沙週四一晚（含稅）</dt><dd>${f(t.hotel)}</dd><dt>岸上餐飲（S$${DEF[mode].meals}）</dt><dd>${f(t.meals)}</dd><dt>Grab 車資（S$${DEF[mode].ride}）</dt><dd>${f(t.ride)}</dd><dt>溫室門票（S$${+$("ticket").value*2}）</dt><dd>${f(t.ticket)}</dd></dl>
+  const card=(n,c)=>{
+    const p=PLANS[n], t=total(p,mode,c), a=total(p,"same",c), b=total(p,"early",c), on=n===cur&&c===cab, nm=p.name+(c==="biz"?" 商務艙":"");
+    return `<div class="plan" data-on="${on}"><h3>${nm}<small>${p.range[mode]}　${p.tag}</small></h3>
+    <div class="tot"><span class="big">${f(t.sum/2)}</span><span class="src">平均每人（${MODES[mode].name}、${CABS[c]}，含稅、含小費）。2 人合計 ${f(t.sum)}，下列各項是 2 人金額</span></div>
+    <dl><dt>郵輪（含稅含小費）</dt><dd>${f(t.cruise)}</dd><dt>機票（${CABS[c]}，含稅，每人 ${fmt(fare(p,mode,c))}）</dt><dd>${f(t.air)}</dd>${mode==="early"?`<dt>金沙週日一晚（含稅）</dt><dd>${f(t.hotel0)}</dd>`:""}<dt>金沙週四一晚（含稅）</dt><dd>${f(t.hotel)}</dd><dt>岸上餐飲（S$${DEF[mode].meals}）</dt><dd>${f(t.meals)}</dd><dt>Grab 車資（S$${DEF[mode].ride}）</dt><dd>${f(t.ride)}</dd><dt>溫室門票（S$${+$("ticket").value*2}）</dt><dd>${f(t.ticket)}</dd></dl>
     <div class="alt"><span>每人：當天飛 <b>${f(a.sum/2)}</b></span><span>前一天飛 <b>${f(b.sum/2)}</b></span><span>差 <b>${f((b.sum-a.sum)/2)}</b></span></div>
-    <ul>${p.points.map(x=>`<li>${x}</li>`).join("")}</ul>
-    <button class="pick" data-plan="${n}" aria-pressed="${n===cur}">${n===cur?"正在看："+p.name:"看"+p.name+"的行程"}</button></div>`;
-  }).join("");
-  document.querySelectorAll(".pick").forEach(b=>b.addEventListener("click",()=>{location.hash="plan-"+b.dataset.plan;showPlan(+b.dataset.plan)}));
+    <ul>${(c==="biz"?[`比經濟艙每人多 ${f(fare(p,mode,"biz")-fare(p,mode,"eco"))}`,"桃園與樟宜都可用貴賓室","班機與逐日行程和經濟艙相同"]:p.points).map(x=>`<li>${x}</li>`).join("")}</ul>
+    <button class="pick" data-plan="${n}" data-cab="${c}" aria-pressed="${on}">${on?"正在看："+nm:"看"+nm+"的行程"}</button></div>`;
+  };
+  $("plans").innerHTML=[1,2,3].map(n=>card(n,"eco")).join("");
+  $("plans-biz").innerHTML=[1,2,3].map(n=>card(n,"biz")).join("");
+  document.querySelectorAll(".pick").forEach(b=>b.addEventListener("click",()=>{cab=b.dataset.cab;location.hash="plan-"+b.dataset.plan;showPlan(+b.dataset.plan)}));
   renderCmp();
 }
 function renderCmp(){
   const cols=[[1,"same"],[1,"early"],[2,"same"],[2,"early"],[3,"same"],[3,"early"]].map(([n,m])=>({n,m,t:total(PLANS[n],m)}));
   const R=[["郵輪陽台房（含稅含小費）","cruise"],["機票 2 人（含稅）","air"],["週日飯店（前一天飛才有）","hotel0"],["週四飯店（含稅）","hotel"],["岸上餐飲（估計）","meals"],["Grab 車資（估計）","ride"],["溫室門票","ticket"]];
   const on=(c)=>c.n===cur&&c.m===mode?' class="on num"':' class="num"';
+  const bz=cols.map(c=>total(PLANS[c.n],c.m,"biz"));
   let h=`<thead><tr><th>項目</th>${cols.map(c=>`<th${on(c)}>${PLANS[c.n].name}<br>${MODES[c.m].short}<br><small style="font-weight:400">${PLANS[c.n].range[c.m]}</small></th>`).join("")}</tr></thead><tbody>`;
   h+=R.map(([lab,k])=>`<tr><td class="lab">${lab}</td>${cols.map(c=>`<td class="num">${c.t[k]?fmt(c.t[k]):"—"}</td>`).join("")}</tr>`).join("");
   h+=`<tr><td class="lab">2 人合計</td>${cols.map(c=>`<td class="num">${fmt(c.t.sum)}</td>`).join("")}</tr>`;
   h+=`<tr class="tot"><td>平均每人</td>${cols.map(c=>`<td class="num">${fmt(c.t.sum/2)}</td>`).join("")}</tr>`;
-  h+=`<tr><td class="lab">比同方案當天飛多</td>${cols.map((c,i)=>`<td class="num">${c.m==="early"?"+"+fmt(c.t.sum-cols[i-1].t.sum):"—"}</td>`).join("")}</tr></tbody>`;
+  h+=`<tr><td class="lab">比同方案當天飛多</td>${cols.map((c,i)=>`<td class="num">${c.m==="early"?"+"+fmt(c.t.sum-cols[i-1].t.sum):"—"}</td>`).join("")}</tr>`;
+  h+=`<tr><th class="grp" colspan="7">改搭商務艙（同班機，其餘項目相同）</th></tr>`;
+  h+=`<tr><td class="lab">機票 2 人（商務艙，含稅）</td>${bz.map(t=>`<td class="num">${fmt(t.air)}</td>`).join("")}</tr>`;
+  h+=`<tr><td class="lab">2 人合計</td>${bz.map(t=>`<td class="num">${fmt(t.sum)}</td>`).join("")}</tr>`;
+  h+=`<tr class="tot"><td>平均每人</td>${bz.map(t=>`<td class="num">${fmt(t.sum/2)}</td>`).join("")}</tr>`;
+  h+=`<tr><td class="lab">比經濟艙每人多</td>${bz.map((t,i)=>`<td class="num">+${fmt((t.sum-cols[i].t.sum)/2)}</td>`).join("")}</tr></tbody>`;
   $("cmp").innerHTML=h;
-  $("cmp-note").textContent=`藍底欄是目前選的組合。六欄都用金沙、華航 CI 753 + CI 754 經濟艙計算；台幣依試算表的匯率（1 美元 = ${$("fx").value}、1 新幣 = ${$("sgd").value}）。前一天飛多出的主要是金沙週日一晚，若週日改住 The Clan（1/17 最低價 9,184）可少約 2.7 萬，但房型與床型未確認。`;
+  $("cmp-note").textContent=`藍底欄是目前選的組合。六欄都用金沙、華航 CI 753 + CI 754 計算，上半部是經濟艙，下半部改搭商務艙；台幣依試算表的匯率（1 美元 = ${$("fx").value}、1 新幣 = ${$("sgd").value}）。前一天飛多出的主要是金沙週日一晚，若週日改住 The Clan（1/17 最低價 9,184）可少約 2.7 萬，但房型與床型未確認。`;
 }
 function renderExtra(){
   const r=+$("sgd").value||0, tk=+$("ticket").value;
@@ -942,11 +979,11 @@ function setMode(m){
 }
 function showPlan(n){
   const p=PLANS[n]; if(!p) return; cur=n;
-  $("plan-title").textContent=`${p.name}・${MODES[mode].name}：逐日行程（${p.range[mode]}）`;
+  $("plan-title").textContent=`${p.name}・${MODES[mode].name}${cab==="biz"?"・商務艙":""}：逐日行程（${p.range[mode]}）`;
   $("days").innerHTML=days(p,mode);
   $("notes").innerHTML=p.notes.map(x=>`<li><b>${x[0]}：</b>${x[1]}</li>`).join("");
   $("notes-count").textContent=p.notes.length+" 項";
-  $("sail").value=String(p.sail); $("flight").value=String(p.flight[mode]); $("hotel").value=String(p.hotel);
+  $("sail").value=String(p.sail); $("flight").value=String(fare(p,mode,cab)); $("hotel").value=String(p.hotel);
   $("hotel0").value=String(mode==="early"?p.hotel0:0);
   $("meals").value=DEF[mode].meals; $("ride").value=DEF[mode].ride;
   calc();
