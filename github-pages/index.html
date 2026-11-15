@@ -39,7 +39,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .steps-in::-webkit-scrollbar{display:none}
 .steps a,.steps button{flex:none;font:inherit;font-size:14px;font-weight:500;text-decoration:none;padding:6px 14px;border-radius:99px;background:var(--bg);border:1px solid var(--line);color:var(--fg);cursor:pointer;white-space:nowrap}
 .steps button.top{background:var(--gold);border-color:var(--gold);color:#3b2a00;font-weight:700}
-.steps button.fz{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:700}
+.fzg{flex:none;display:flex;align-items:center;gap:4px;padding:2px 4px 2px 12px;border-radius:99px;border:1px solid var(--accent);background:var(--surface);font-size:14px;font-weight:700;color:var(--accent);white-space:nowrap}
+.steps .fzg button{padding:4px 12px;border-color:transparent;background:transparent}
+.steps .fzg button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:700}
 /* 放大字體：整頁內容等比例放大，導覽列也跟著放大 */
 .hero,main,.steps-in{zoom:var(--z,1)}
 .steps a b{font-family:var(--font-num);color:var(--accent);margin-right:6px}
@@ -232,7 +234,7 @@ table#cmp th.on{background:var(--accent);color:#fff}
 
 <nav class="steps" aria-label="頁面導覽（固定在頁面上方）"><div class="steps-in">
   <button type="button" class="top" id="to-top">↑ 頂端</button>
-  <button type="button" class="fz" id="fz" aria-label="切換字體大小">字體：標準</button>
+  <div class="fzg" role="group" aria-label="字體大小">字體<button type="button" data-fz="0" aria-pressed="true">標準</button><button type="button" data-fz="1" aria-pressed="false">大</button><button type="button" data-fz="2" aria-pressed="false">特大</button></div>
   <a href="#sec-prep"><b>1</b>氣候與穿著</a>
   <a href="#sec-mom"><b>＋</b>與媽媽同行</a>
   <a href="#sec-plan"><b>2</b>三個行程方案</a>
@@ -968,15 +970,15 @@ $("close-all").addEventListener("click",()=>document.querySelectorAll("#days det
 function route(){const m=/^#plan-([123])$/.exec(location.hash); if(m) showPlan(+m[1]);}
 window.addEventListener("hashchange",route);
 $("to-top").addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
-/* 放大字體：標準 → 大 → 特大，選擇存在這個瀏覽器 */
-const FZ=[["標準",1],["大",1.25],["特大",1.5]], FZK="dsg-fontsize-v1";
+/* 字體大小：標準、大、特大三顆按鈕直接選，選擇存在這個瀏覽器 */
+const FZ=[1,1.25,1.5], FZK="dsg-fontsize-v1", fzb=[...document.querySelectorAll(".fzg button")];
 let fz=0;
 try{fz=Math.min(FZ.length-1,Math.max(0,+localStorage.getItem(FZK)||0))}catch(e){fz=0}
 function fzApply(){
-  document.documentElement.style.setProperty("--z",FZ[fz][1]);
-  $("fz").textContent="字體："+FZ[fz][0]+(fz<FZ.length-1?"　按一下放大":"　按一下還原");
+  document.documentElement.style.setProperty("--z",FZ[fz]);
+  fzb.forEach(b=>b.setAttribute("aria-pressed",String(+b.dataset.fz===fz)));
 }
-$("fz").addEventListener("click",()=>{fz=(fz+1)%FZ.length; try{localStorage.setItem(FZK,String(fz))}catch(e){} fzApply();});
+fzb.forEach(b=>b.addEventListener("click",()=>{fz=+b.dataset.fz; try{localStorage.setItem(FZK,String(fz))}catch(e){} fzApply();}));
 fzApply();
 /* 待辦清單：勾選狀態存在這個瀏覽器，存不了就只在這次開啟有效 */
 const CK="dsg-checklist-v1";
