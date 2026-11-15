@@ -253,7 +253,7 @@ table#cmp th.on{background:var(--accent);color:#fff}
   <div class="fzg" role="group" aria-label="字體大小">字體<button type="button" data-fz="0" aria-pressed="true">標準</button><button type="button" data-fz="1" aria-pressed="false">大</button><button type="button" data-fz="2" aria-pressed="false">特大</button></div>
   <a href="#sec-flight"><b>✈</b>飛行時間</a>
   <a href="#sec-prep"><b>1</b>氣候與穿著</a>
-  <a href="#sec-plan"><b>2</b>兩個行程方案</a>
+  <a href="#sec-plan"><b>2</b>三個行程方案</a>
   <a href="#sec-fun"><b>3</b>船上與景點</a>
   <a href="#sec-cost"><b>4</b>費用明細</a>
   <a href="#sec-hotel"><b>5</b>住宿比較</a>
@@ -271,7 +271,7 @@ table#cmp th.on{background:var(--accent);color:#fff}
     <div class="card"><h3>回程：新加坡 → 桃園</h3><div class="big">4 小時 40 分</div><small>華航 CI 754，14:25 起飛、19:05 抵達<br>樟宜第三航廈出發</small></div>
     <div class="card"><h3>時差</h3><div class="big">沒有時差</div><small>兩地都是 UTC+8，手錶與手機不用調</small></div>
   </div>
-  <p class="src">飛行時間是用 Google 航班的表定起降時刻相減算出來的，實際會因風向與航管略有增減。兩個方案、經濟艙與商務艙都是這兩班飛機。<span class="tag">航班</span></p>
+  <p class="src">飛行時間是用 Google 航班的表定起降時刻相減算出來的，實際會因風向與航管略有增減。三個方案、經濟艙與商務艙都是這兩班飛機。<span class="tag">航班</span></p>
 </section>
 
 <section id="sec-prep">
@@ -292,16 +292,16 @@ table#cmp th.on{background:var(--accent);color:#fff}
 </section>
 
 <section id="sec-plan">
-  <div><h2>兩個行程方案 <small>第 2 步</small></h2><p class="sub">兩個方案的流程一樣，差在日期。每個方案再分「登船當天飛」與「前一天（週日）先飛」兩種，機票分經濟艙與商務艙兩排，先看下方並排的總價，再切換出發方式看逐日行程。</p></div>
+  <div><h2>三個行程方案 <small>第 2 步</small></h2><p class="sub">三個方案是三個檔期，流程一樣，差在日期：行程一 1 月中、行程二春節前、行程三搭 228 連假（3/1 補假，請假少 1 天）。每個方案再分「登船當天飛」與「前一天（週日）先飛」兩種，機票分經濟艙與商務艙兩排，先看下方並排的總價，再切換出發方式看逐日行程。</p></div>
   <div class="seg" role="group" aria-label="出發方式">
     <button type="button" class="segb" data-mode="same" aria-pressed="true">登船當天飛（週一出發）</button>
     <button type="button" class="segb" data-mode="early" aria-pressed="false">前一天先飛（週日出發）<span class="pill">建議</span></button>
   </div>
   <div class="plans" id="plans"></div>
-  <h3 class="sh">同樣兩個方案，改搭商務艙</h3>
+  <h3 class="sh">同樣三個方案，改搭商務艙</h3>
   <p class="sub">班機一樣是華航 CI 753 去、CI 754 回，只把機票換成商務艙，其餘項目不變。出發與回程都可以用貴賓室，說明在第 4 步「商務艙貴賓室」。</p>
   <div class="plans" id="plans-biz"></div>
-  <h3 class="sh">四種組合並排</h3>
+  <h3 class="sh">六種組合並排</h3>
   <p class="sub">備註：金額是新台幣，各項為 2 人金額，綠色列是平均每人。</p>
   <div class="wrap"><table class="w1" id="cmp"></table></div>
   <p class="src" id="cmp-note"></p>
@@ -336,7 +336,7 @@ table#cmp th.on{background:var(--accent);color:#fff}
     <h3 class="sh" id="plan-title">逐日行程</h3>
     <div class="ctl" style="margin-top:6px"><button class="mini" id="open-all">全部展開</button><button class="mini" id="close-all">全部收合</button></div>
   </div>
-  <div class="seg" role="group" aria-label="選擇行程"><button type="button" class="segb" data-plan="1" aria-pressed="true">行程一（1/18 上船）</button><button type="button" class="segb" data-plan="2" aria-pressed="false">行程二（2/1 上船）</button></div>
+  <div class="seg" role="group" aria-label="選擇行程"><button type="button" class="segb" data-plan="1" aria-pressed="true">行程一（1/18 上船）</button><button type="button" class="segb" data-plan="2" aria-pressed="false">行程二（2/1 上船）</button><button type="button" class="segb" data-plan="3" aria-pressed="false">行程三（3/1 上船，228 連假）</button></div>
   <div class="seg" role="group" aria-label="出發方式"><button type="button" class="segb" data-mode="same" aria-pressed="true">登船當天飛（週一出發）</button><button type="button" class="segb" data-mode="early" aria-pressed="false">前一天先飛（週日出發）<span class="pill">建議</span></button></div>
   <div id="days" style="display:flex;flex-direction:column;gap:10px"></div>
   <details>
@@ -405,7 +405,7 @@ table#cmp th.on{background:var(--accent);color:#fff}
     <thead><tr><th>地點</th><th>內容</th><th>時間與票價</th><th>來源</th></tr></thead>
     <tbody>
     <tr><td>濱海灣花園</td><td>超級樹叢等戶外園區</td><td>戶外免費</td><td>非官方　<a href="https://www.youtube.com/watch?v=vM7Kyya2Or0" target="_blank" rel="noopener">影片</a></td></tr>
-    <tr><td>Flower Dome 與 Cloud Forest</td><td>兩座冷氣溫室（23–25°C）。Cloud Forest 目前有「Jurassic World: The Experience」，官網提醒有大聲音效與閃光；每座溫室最多停留 1 小時，不能重複入場</td><td>9:00–21:00。兩館套票成人 S$46（約 TWD 1,196），已列入預算。1/21、2/4 與 1/17、1/31 都不是維護休館日</td><td>官網　<a href="https://www.gardensbythebay.com.sg/en/things-to-do/attractions/flower-dome.html" target="_blank" rel="noopener">票價</a>　<a href="https://www.gardensbythebay.com.sg/en/plan-your-visit/opening-hours.html" target="_blank" rel="noopener">休館日</a></td></tr>
+    <tr><td>Flower Dome 與 Cloud Forest</td><td>兩座冷氣溫室（23–25°C）。Cloud Forest 目前有「Jurassic World: The Experience」，官網提醒有大聲音效與閃光；每座溫室最多停留 1 小時，不能重複入場</td><td>9:00–21:00。兩館套票成人 S$46（約 TWD 1,196），已列入預算。1/21、2/4、3/4 與 1/17、1/31、2/28 都不是維護休館日</td><td>官網　<a href="https://www.gardensbythebay.com.sg/en/things-to-do/attractions/flower-dome.html" target="_blank" rel="noopener">票價</a>　<a href="https://www.gardensbythebay.com.sg/en/plan-your-visit/opening-hours.html" target="_blank" rel="noopener">休館日</a></td></tr>
     <tr><td>Disney Garden of Wonder（Floral Fantasy）</td><td>迪士尼角色花藝展，有《玩具總動員 5》與《冰雪奇緣》，展期 2026/6/8–2027/3/14</td><td>兩館＋花藝展＋園區接駁車套票成人 S$73（約 TWD 1,898），比兩館套票每人多 S$27（約 TWD 702）。沒有列入預算</td><td>官網　<a href="https://www.gardensbythebay.com.sg/en/things-to-do/attractions/floral-fantasy.html" target="_blank" rel="noopener">介紹</a></td></tr>
     <tr><td>OCBC 空中步道</td><td>超級樹之間的高空步道</td><td>官網舊資料 S$14（約 TWD 364，期限到 2026/4）</td><td>官網舊資料　<a href="https://www.youtube.com/watch?v=6_HtlMvWV4o" target="_blank" rel="noopener">影片</a></td></tr>
     <tr><td>Garden Rhapsody</td><td>超級樹叢的免費燈光音樂秀</td><td>每晚 19:45 與 20:45，約 10–15 分鐘</td><td>非官方　<a href="https://www.youtube.com/watch?v=o2qzwFneqv8" target="_blank" rel="noopener">影片</a></td></tr>
@@ -432,7 +432,7 @@ table#cmp th.on{background:var(--accent);color:#fff}
     <tr><td>2027/2/8–11　春節週</td><td class="num">$1,121</td><td class="num">$2,242</td><td class="num">77,154</td></tr>
     <tr><td>2027/2/15–18</td><td class="num">$697 <s>$973</s></td><td class="num">$1,394</td><td class="num">49,170</td></tr>
     <tr><td>2027/2/22–25</td><td class="num">$715 <s>$939</s></td><td class="num">$1,430</td><td class="num">50,358</td></tr>
-    <tr><td>2027/3/1–4</td><td class="num">$610 <s>$982</s></td><td class="num">$1,220</td><td class="num">43,432</td></tr>
+    <tr class="best"><td>2027/3/1–4　行程三<span class="pill">228 連假</span></td><td class="num">$610 <s>$982</s></td><td class="num">$1,220</td><td class="num">43,432</td></tr>
     <tr><td>2027/3/8–11</td><td class="num">$914<small class="m">沒有折扣價</small></td><td class="num">$1,827</td><td class="num">63,462</td></tr>
     <tr><td>2027/3/15–18</td><td class="num">$652 <s>$1,054</s></td><td class="num">$1,304</td><td class="num">46,204</td></tr>
     <tr><td>2027/3/22–25</td><td class="num">$875<small class="m">沒有折扣價</small></td><td class="num">$1,750</td><td class="num">60,902</td></tr>
@@ -455,7 +455,7 @@ table#cmp th.on{background:var(--accent);color:#fff}
     <tr class="best"><td>華航 CI 753<small class="m">08:20 → 13:05</small></td><td>華航 CI 754<small class="m">14:25 → 19:05</small></td><td class="num">11,324</td><td class="num">31,775</td><td class="num">22,081<small class="m">Google 標示豪華經濟艙</small></td><td class="num">37,778</td></tr>
     </tbody>
   </table></div>
-  <p class="src">當天飛推薦第一列：華航 CI 753 在 13:05 抵達，趕得上登船。長榮 BR 215 下午 2:30 才抵達，要先確認登船截止時間。華航晚上 19:55 的去程班機隔天凌晨才抵達，已排除。「分段購票」是兩家航空各買一張，行李費另計。前一天先飛不用趕船，也可以選晚一點的週日班機，例如新航 14:10 → 18:55，但我只看到 Google 列出的起價（1/17 每人 13,396、1/31 每人 18,511，搭配的回程不一定是週五下午），沒有確認搭配 CI 754 的價格。商務艙價格：行程一、二當天飛是 2026/11/12–13 查詢，週日去程是 2026/11/15 查詢。</p>
+  <p class="src">當天飛推薦第一列：華航 CI 753 在 13:05 抵達，趕得上登船。長榮 BR 215 下午 2:30 才抵達，要先確認登船截止時間。華航晚上 19:55 的去程班機隔天凌晨才抵達，已排除。「分段購票」是兩家航空各買一張，行李費另計。前一天先飛不用趕船，也可以選晚一點的週日班機，例如新航 14:10 → 18:55，但我只看到 Google 列出的起價（1/17 每人 13,396、1/31 每人 18,511，搭配的回程不一定是週五下午），沒有確認搭配 CI 754 的價格。商務艙價格：行程一、二當天飛是 2026/11/12–13 查詢，週日去程與行程三是 2026/11/15 查詢。行程三（228 連假）：3/1（一）或 2/28（日）出發、3/5（五）回，華航 CI 753 + CI 754 經濟艙都是每人 11,324；商務艙 3/1 出發 31,775，2/28 出發的商務艙沒有查到。</p>
 
   <h3 class="sh" id="lounge">商務艙貴賓室（華航）</h3>
   <p class="sub">搭華航商務艙，去程在桃園、回程在樟宜都可以用貴賓室，登機前有地方坐著吃東西、休息，對媽媽比較輕鬆。以下取自華航官網「機場與貴賓室」頁面（2026/11/15 查詢）。</p>
@@ -465,7 +465,7 @@ table#cmp th.on{background:var(--accent);color:#fff}
     <div class="card"><h3>報到時間</h3><div class="big">起飛前 60 分鐘關櫃</div><small>桃園：飛新加坡在第一航廈報到<br>樟宜：第三航廈，起飛前 180 分鐘開櫃。CI 754 是 14:25 起飛，約 11:25 開櫃，報到後大約有 2 小時可以待在貴賓室</small></div>
   </div>
   <ul class="notes">
-    <li><b>價差：</b>商務艙比經濟艙每人多：行程一約 TWD 20,451、行程二約 17,534（當天飛）。行程二經濟艙本來就貴，所以價差最小。<span class="tag">航班</span></li>
+    <li><b>價差：</b>商務艙比經濟艙每人多：行程一約 TWD 20,451、行程二約 17,534、行程三約 20,451（當天飛）。行程二經濟艙本來就貴，所以價差最小。<span class="tag">航班</span></li>
     <li><b>兩人都要是商務艙：</b>貴賓室憑商務艙登機證入場。能不能帶同行的經濟艙旅客、有沒有年齡或停留時間限制，我沒有查，以華航規定為準。<span class="tag todo">待確認</span></li>
     <li><b>其他好處：</b>商務艙通常有專屬報到櫃檯、優先登機、較高的託運行李額度與可平躺或大角度後躺的座位。CI 753／754 實際派的機型與座椅我沒有查。<span class="tag todo">一般資訊</span><span class="tag todo">待確認</span></li>
     <li><b>餐飲預估沒有扣：</b>貴賓室有熱食，回程日的機場午餐（S$30）可以省下，但預估合計沒有扣掉這筆。</li>
@@ -521,7 +521,7 @@ table#cmp th.on{background:var(--accent);color:#fff}
         <option value="1121">2/8–11（春節週），$1,121</option>
         <option value="697">2/15–18，$697</option>
         <option value="715">2/22–25，$715</option>
-        <option value="610.06">3/1–4，$610</option>
+        <option value="610.06">3/1–4（行程三，228 連假），$610</option>
         <option value="913.54">3/8–11，$914</option>
         <option value="652.06">3/15–18，$652</option>
         <option value="874.76">3/22–25，$875</option>
@@ -537,7 +537,7 @@ table#cmp th.on{background:var(--accent);color:#fff}
         <optgroup label="行程一 當天飛 商務艙">
           <option value="31766">華航 CI 753 + CI 754，31,766</option>
         </optgroup>
-        <optgroup label="行程一 前一天飛 1/17→1/22 經濟艙">
+        <optgroup label="行程一 前一天飛、行程三 3/1 或 2/28→3/5 經濟艙">
           <option value="11324">華航 CI 753 + CI 754，11,324</option>
         </optgroup>
         <optgroup label="行程二 當天飛 2/1→2/5 經濟艙">
@@ -550,7 +550,7 @@ table#cmp th.on{background:var(--accent);color:#fff}
         <optgroup label="行程二 前一天飛 1/31→2/5">
           <option value="22081">華航 CI 753 + CI 754，22,081</option>
         </optgroup>
-        <optgroup label="行程一 前一天飛 商務艙">
+        <optgroup label="行程一 前一天飛、行程三 商務艙">
           <option value="31775">華航 CI 753 + CI 754，31,775</option>
         </optgroup>
         <optgroup label="行程二 前一天飛 商務艙">
@@ -562,6 +562,7 @@ table#cmp th.on{background:var(--accent);color:#fff}
         <option value="0" selected>不住（登船當天飛）</option>
         <optgroup label="預設：近郵輪中心的折衷選擇（1/17、1/31）">
           <option value="5807">Orchid Hotel 豪華雙床房（兩張單人床），5,807</option>
+          <option value="7118">Orchid Hotel 豪華雙床房（行程三 2/28 連假），7,118</option>
           <option value="5999">Carlton City 豪華特大雙人床或雙床房，5,999</option>
           <option value="7721">Amara 豪華雙床房（1/17），7,721</option>
           <option value="7797">Oasia Downtown 高級雙人或雙床房（1/17），7,797</option>
@@ -581,6 +582,10 @@ table#cmp th.on{background:var(--accent);color:#fff}
         <optgroup label="預設：濱海灣金沙（1/21 與 2/4 同價）">
           <option value="36834" selected>濱海灣金沙 雙加大雙人床房，36,834</option>
           <option value="38369">濱海灣金沙 市景雙加大雙人床房，38,369</option>
+        </optgroup>
+        <optgroup label="行程三 3/4">
+          <option value="30575">濱海灣金沙 花園景雙加大雙人床房，30,575</option>
+          <option value="32103">濱海灣金沙 市景雙加大雙人床房，32,103</option>
         </optgroup>
         <optgroup label="備選 行程一 1/21">
           <option value="11961">浮爾頓酒店 尊爵庭院雙床房，11,961</option>
@@ -610,13 +615,13 @@ table#cmp th.on{background:var(--accent);color:#fff}
 
 <section id="sec-hotel">
   <div><h2>住宿比較 <small>第 5 步</small></h2><p class="sub">預設住濱海灣金沙，所有合計都用金沙計算。浮爾頓酒店與 The Clan Hotel 留作備選，收在下方。價格是 2 人、雙床房，取自 Booking.com，全部是含稅價。</p></div>
-  <div class="seg" role="group" aria-label="選擇行程"><button type="button" class="segb" data-plan="1" aria-pressed="true">行程一（1/18 上船）</button><button type="button" class="segb" data-plan="2" aria-pressed="false">行程二（2/1 上船）</button></div>
+  <div class="seg" role="group" aria-label="選擇行程"><button type="button" class="segb" data-plan="1" aria-pressed="true">行程一（1/18 上船）</button><button type="button" class="segb" data-plan="2" aria-pressed="false">行程二（2/1 上船）</button><button type="button" class="segb" data-plan="3" aria-pressed="false">行程三（3/1 上船，228 連假）</button></div>
   <div class="seg" role="group" aria-label="出發方式"><button type="button" class="segb" data-mode="same" aria-pressed="true">登船當天飛（週一出發）</button><button type="button" class="segb" data-mode="early" aria-pressed="false">前一天先飛（週日出發）<span class="pill">建議</span></button></div>
   <p class="card" id="stay-sum"></p>
   <div class="hotels">
     <article class="hotel wide"><img src="img/mbspool.jpg" alt="濱海灣金沙空中花園的無邊際泳池" loading="lazy"><div class="in">
       <h3>濱海灣金沙<span class="pill">預設</span></h3><div class="pr">36,834 起<small class="m">含稅。週四 1/21、2/4 雙加大雙人床房，房價 30,721 ＋ 稅 6,113</small></div>
-      <ul><li>評分 9.6，景點與燈光秀就在門口，到郵輪中心車程約 7 分鐘</li><li>前一天先飛的週日 1/17、1/31：花園景雙加大雙人床房 36,690（含稅，1/17 入住可在 1/15 前免費取消）</li><li>住客限定的無邊際泳池</li><li>價格最高；2027/1/6 起大廳整修，泳池 5 月起分階段施工</li></ul>
+      <ul><li>評分 9.6，景點與燈光秀就在門口，到郵輪中心車程約 7 分鐘</li><li>前一天先飛的週日 1/17、1/31：花園景雙加大雙人床房 36,690（含稅，1/17 入住可在 1/15 前免費取消）</li><li>行程三的週四 3/4 比較便宜：花園景雙加大雙人床房 30,575（含稅）</li><li>住客限定的無邊際泳池</li><li>價格最高；2027/1/6 起大廳整修，泳池 5 月起分階段施工</li></ul>
       <div class="cr">照片：Ank Kumar，<a href="https://commons.wikimedia.org/wiki/File:Infinity_Pool_at_Marina_Bay_Sands_SkyPark_Singapore_Ank_Kumar_Infosys_Limited_04.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a>，已縮小</div></div></article>
   </div>
   <details>
@@ -658,7 +663,7 @@ table#cmp th.on{background:var(--accent);color:#fff}
     <tr><td class="lab">到樟宜機場</td><td>約 16 公里（頁面）</td><td>車程約 25 分鐘（頁面）</td><td>約 18 公里（頁面）</td></tr>
     </tbody>
   </table></div>
-  <p class="src">含稅價 = Booking.com 顯示的房價加稅費。稅費約為房價的 19.9%，浮爾頓酒店依折扣前價格計稅，所以稅費看起來較高。標「≈」的是我用同一稅率推算，沒有逐一確認。金沙的雙床房是兩張加大雙人床，不是單人床。金沙整修公告：2027/1/6 到 2028/6/30 分階段整修，大廳與入口區自 1/6 起，空中花園與無邊際泳池自 5 月起，兩個行程的入住日都在整修期間，請向飯店確認。浮爾頓酒店頁面只列 1 間餐廳，不代表館內只有 1 間。早餐價是 Booking.com 顯示價，沒有確認是否每人計價。車程取自 Google 地圖，沒有計入路況。</p>
+  <p class="src">含稅價 = Booking.com 顯示的房價加稅費。稅費約為房價的 19.9%，浮爾頓酒店依折扣前價格計稅，所以稅費看起來較高。標「≈」的是我用同一稅率推算，沒有逐一確認。金沙的雙床房是兩張加大雙人床，不是單人床。金沙整修公告：2027/1/6 到 2028/6/30 分階段整修，大廳與入口區自 1/6 起，空中花園與無邊際泳池自 5 月起，三個行程的入住日都在整修期間，請向飯店確認。浮爾頓酒店頁面只列 1 間餐廳，不代表館內只有 1 間。早餐價是 Booking.com 顯示價，沒有確認是否每人計價。車程取自 Google 地圖，沒有計入路況。</p>
   <h3 class="sh" id="sunday-hotel">前一天先飛：週日住哪裡（近郵輪中心的平價選擇）</h3>
   <p class="sub">折衷做法：週日不住金沙，改住郵輪中心附近、有雙床房的四星飯店，隔天搭車約 10 分鐘上船；週四下船後再住金沙。第 2 步的合計用第一列的 Orchid Hotel 計算。</p>
   <div class="wrap"><table>
@@ -671,7 +676,7 @@ table#cmp th.on{background:var(--accent);color:#fff}
     <tr><td>濱海灣金沙<small class="m">對照</small></td><td>2.0 公里</td><td class="num">9.6</td><td>花園景雙加大雙人床房</td><td class="num">36,690</td><td class="num">36,690</td></tr>
     </tbody>
   </table></div>
-  <p class="src">Booking.com，2026/11/15 查詢，2 人 1 間、住 1 晚，價格是頁面標示「含稅費與其他費用」的最低價。距離是 Booking.com 顯示到郵輪中心的直線距離，不是車程。我沒有查這幾間的入住與退房時間、能否免費取消、房間大小，也沒有看住客評論的內容；Carlton City 最低價那一列沒有顯示床型。訂房前請再確認。<span class="tag todo">待確認</span></p>
+  <p class="src">Booking.com，2026/11/15 查詢，2 人 1 間、住 1 晚，價格是頁面標示「含稅費與其他費用」的最低價。距離是 Booking.com 顯示到郵輪中心的直線距離，不是車程。我沒有查這幾間的入住與退房時間、能否免費取消、房間大小，也沒有看住客評論的內容；Carlton City 最低價那一列沒有顯示床型。行程三的週日是 2/28（228 連假），Orchid Hotel 豪華雙床房含稅 7,118，其他三間的 2/28 價格沒有查。訂房前請再確認。<span class="tag todo">待確認</span></p>
   <details>
     <summary><span class="d">更多飯店照片</span><span class="s">共 8 張：浮爾頓酒店 3 張、金沙 4 張、The Clan 1 張</span></summary>
     <div class="body"><div class="photos">
@@ -695,7 +700,7 @@ table#cmp th.on{background:var(--accent);color:#fff}
   <div class="chkbar"><span id="chk-count">已完成 0 項</span><span class="bar" aria-hidden="true"><i id="chk-bar"></i></span><button type="button" class="mini" id="chk-open">全部展開</button><button type="button" class="mini" id="chk-reset">全部取消勾選</button></div>
   <div class="chkgrp" id="chk">
     <details open><summary><span class="d">現在到訂位前</span><span class="s" data-grp="0">6 項　決定方案，訂位前把價格重查一次</span></summary><div class="body"><ul class="chk">
-      <li><label><input type="checkbox" data-k="pick"><span>決定行程一（1/18）或行程二（2/1），以及登船當天飛或前一天先飛</span></label></li>
+      <li><label><input type="checkbox" data-k="pick"><span>決定行程一（1/18）、行程二（2/1）或行程三（3/1，228 連假），以及登船當天飛或前一天先飛</span></label></li>
       <li><label><input type="checkbox" data-k="pp"><span>確認兩人護照效期。一般說法是入境新加坡時要有 6 個月以上效期，請到外交部領事事務局網站確認<span class="tag todo">待確認</span></span></label></li>
       <li><label><input type="checkbox" data-k="rule"><span>確認可以接受折扣價的限制：迪士尼指定房間、全額付款、不可退款、不能改日期<span class="tag">官網</span></span></label></li>
       <li><label><input type="checkbox" data-k="recheck"><span>訂位前重查郵輪、機票、金沙價格（頁面價格查詢日 2026/11/12–15）</span></label></li>
@@ -858,6 +863,21 @@ const PLANS={
       ["價格比較","2/8–11 的春節週陽台房 $1,121，比 2/1–4 的 $691 高出約 6 成。"],
       ["天氣","2 月是東北季風後段，通常比 1 月乾，但年年差異大，仍要帶傘。"],
       ["金沙整修","金沙整修公告涵蓋 2027/1/6 到 2028/6/30，大廳與入口區自 1/6 起，空中花園與泳池自 5 月起分階段施工。"]
+     ]},
+  3:{name:"行程三",range:{same:"3/1（一）→ 3/5（五）",early:"2/28（日）→ 3/5（五）"},tag:"228 連假",d0:"2/28",d:["3/1","3/2","3/3","3/4","3/5"],sail:610.06,flight:{same:11324,early:11324},biz:{same:31775,early:31775},hotel:30575,hotel0:7118,
+     points:["搭 228 連假，請假比其他檔期少 1 天（4 天）","郵輪是折扣價每人 $610，機票與行程一幾乎同價","金沙 3/4 比 1、2 月便宜約 6,000"],
+     notes:[
+      ["請假天數","2027/2/28 和平紀念日是週日，依規定週一 3/1 補假（我依放假規定推算，沒有查 2027 年的官方行事曆）。當天飛是 3/1 補假日出發，3/2 到 3/5 請 4 天假；前一天先飛是 2/28 週日出發，同樣請 4 天。行程一、二都要請週一到週五 5 天。"],
+      ["另一種排法","改搭前一週 2/22–25 的航次（每人 $715），2/26 週五回台，回來接 2/27 到 3/1 三天連假休息，但要請 5 天假。這個排法沒有放進方案，機票與飯店也沒有查。"],
+      ["郵輪價格","3/1–4 陽台房每人 $610.06（原價 $982.42），只比最低的行程一貴 $12。"],
+      ["限制條件",TOP],
+      ["機票","華航 CI 753 去、CI 754 回，3/1 或 2/28 出發的經濟艙都是每人 11,324。商務艙 3/1 出發是 31,775；2/28 出發的商務艙我沒有查到，頁面暫時用同一個價格。"],
+      ["前一天先飛","2/28（日）住郵輪中心附近的 Orchid Hotel，豪華雙床房含稅 7,118，連假期間比 1 月的 5,807 貴。"],
+      ["金沙","3/4（四）花園景雙加大雙人床房 30,575，市景 32,103。一般雙加大雙人床房沒有列出。能否免費取消這次沒有查。"],
+      ["連假人潮","連假頭尾的機場與班機通常比較擠，報到與安檢要多留時間。這是一般說法，我沒有查 2027 年的預估。"],
+      ["額外花費","預估合計已含岸上餐飲、Grab 車資與溫室門票。不含船上酒類、特色餐廳、Wi-Fi、岸上活動與其他景點。"],
+      ["天氣","3 月初是東北季風尾聲，通常比 1 月乾，仍要帶傘。這是一般說法，我沒有查 3 月的統計。"],
+      ["金沙整修","金沙整修公告涵蓋 2027/1/6 到 2028/6/30，大廳與入口區自 1/6 起，空中花園與泳池自 5 月起分階段施工。"]
      ]}
 };
 let cur=1, mode="same", cab="eco";
@@ -968,13 +988,13 @@ function renderPlans(){
     <ul>${(c==="biz"?[`比經濟艙每人多 ${f(fare(p,mode,"biz")-fare(p,mode,"eco"))}`,"桃園與樟宜都可用貴賓室","班機與逐日行程和經濟艙相同"]:p.points).map(x=>`<li>${x}</li>`).join("")}</ul>
     <button class="pick" data-plan="${n}" data-cab="${c}" aria-pressed="${on}">${on?"正在看："+nm:"看"+nm+"的行程"}</button></div>`;
   };
-  $("plans").innerHTML=[1,2].map(n=>card(n,"eco")).join("");
-  $("plans-biz").innerHTML=[1,2].map(n=>card(n,"biz")).join("");
+  $("plans").innerHTML=[1,2,3].map(n=>card(n,"eco")).join("");
+  $("plans-biz").innerHTML=[1,2,3].map(n=>card(n,"biz")).join("");
   document.querySelectorAll(".pick").forEach(b=>b.addEventListener("click",()=>{cab=b.dataset.cab;location.hash="plan-"+b.dataset.plan;showPlan(+b.dataset.plan)}));
   renderCmp();
 }
 function renderCmp(){
-  const cols=[[1,"same"],[1,"early"],[2,"same"],[2,"early"]].map(([n,m])=>({n,m,t:total(PLANS[n],m)}));
+  const cols=[[1,"same"],[1,"early"],[2,"same"],[2,"early"],[3,"same"],[3,"early"]].map(([n,m])=>({n,m,t:total(PLANS[n],m)}));
   const R=[["郵輪陽台房（含稅含小費）","cruise"],["機票 2 人（含稅）","air"],["週日飯店（前一天飛才有）","hotel0"],["週四飯店（含稅）","hotel"],["岸上餐飲（估計）","meals"],["Grab 車資（估計）","ride"],["溫室門票","ticket"]];
   const on=(c)=>c.n===cur&&c.m===mode?' class="on num"':' class="num"';
   const bz=cols.map(c=>total(PLANS[c.n],c.m,"biz"));
@@ -983,13 +1003,13 @@ function renderCmp(){
   h+=`<tr><td class="lab">2 人合計</td>${cols.map(c=>`<td class="num">${fmt(c.t.sum)}</td>`).join("")}</tr>`;
   h+=`<tr class="tot"><td>平均每人</td>${cols.map(c=>`<td class="num">${fmt(c.t.sum/2)}</td>`).join("")}</tr>`;
   h+=`<tr><td class="lab">比同方案當天飛多</td>${cols.map((c,i)=>`<td class="num">${c.m==="early"?"+"+fmt(c.t.sum-cols[i-1].t.sum):"—"}</td>`).join("")}</tr>`;
-  h+=`<tr><th class="grp" colspan="5">改搭商務艙（同班機，其餘項目相同）</th></tr>`;
+  h+=`<tr><th class="grp" colspan="7">改搭商務艙（同班機，其餘項目相同）</th></tr>`;
   h+=`<tr><td class="lab">機票 2 人（商務艙，含稅）</td>${bz.map(t=>`<td class="num">${fmt(t.air)}</td>`).join("")}</tr>`;
   h+=`<tr><td class="lab">2 人合計</td>${bz.map(t=>`<td class="num">${fmt(t.sum)}</td>`).join("")}</tr>`;
   h+=`<tr class="tot"><td>平均每人</td>${bz.map(t=>`<td class="num">${fmt(t.sum/2)}</td>`).join("")}</tr>`;
   h+=`<tr><td class="lab">比經濟艙每人多</td>${bz.map((t,i)=>`<td class="num">+${fmt((t.sum-cols[i].t.sum)/2)}</td>`).join("")}</tr></tbody>`;
   $("cmp").innerHTML=h;
-  $("cmp-note").textContent=`藍底欄是目前選的組合。四欄的週四都住金沙、班機都是華航 CI 753 + CI 754，上半部是經濟艙，下半部改搭商務艙；台幣依試算表的匯率（1 美元 = ${$("fx").value}、1 新幣 = ${$("sgd").value}）。前一天飛的週日住郵輪中心附近的 Orchid Hotel（豪華雙床房，含稅 5,807），多出的是這一晚加上第 0 天的餐飲與車資。週日如果也想住金沙（36,690），2 人合計再多 30,883。`;
+  $("cmp-note").textContent=`藍底欄是目前選的組合。六欄的週四都住金沙、班機都是華航 CI 753 + CI 754，上半部是經濟艙，下半部改搭商務艙；台幣依試算表的匯率（1 美元 = ${$("fx").value}、1 新幣 = ${$("sgd").value}）。前一天飛的週日住郵輪中心附近的 Orchid Hotel（豪華雙床房，1 月含稅 5,807、2/28 連假 7,118），多出的是這一晚加上第 0 天的餐飲與車資。行程一、二的週日如果也想住金沙（36,690），2 人合計再多 30,883。`;
 }
 function renderExtra(){
   const r=+$("sgd").value||0, tk=+$("ticket").value;
@@ -1039,7 +1059,7 @@ document.querySelectorAll(".segb[data-mode]").forEach(b=>b.addEventListener("cli
 document.querySelectorAll(".segb[data-plan]").forEach(b=>b.addEventListener("click",()=>showPlan(+b.dataset.plan)));
 $("open-all").addEventListener("click",()=>document.querySelectorAll("#days details").forEach(d=>d.open=true));
 $("close-all").addEventListener("click",()=>document.querySelectorAll("#days details").forEach(d=>d.open=false));
-function route(){const m=/^#plan-([12])$/.exec(location.hash); if(m) showPlan(+m[1]);}
+function route(){const m=/^#plan-([123])$/.exec(location.hash); if(m) showPlan(+m[1]);}
 window.addEventListener("hashchange",route);
 $("to-top").addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
 /* 字體大小：標準、大、特大三顆按鈕直接選，選擇存在這個瀏覽器 */
