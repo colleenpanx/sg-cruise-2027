@@ -54,6 +54,7 @@ section{display:flex;flex-direction:column;gap:14px;min-width:0;scroll-margin-to
 .wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
 table{border-collapse:collapse;width:100%;min-width:560px;font-size:14px}
 table.w1{min-width:760px}
+table#cmp{min-width:900px}
 table.vs{min-width:680px}
 th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
 th{font-size:12px;letter-spacing:.06em;color:var(--accent);font-weight:700;background:var(--accent-soft)}
@@ -74,7 +75,7 @@ small.m{display:block;color:var(--muted);font-size:12px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
 .alert{background:var(--gold-soft);color:var(--gold-ink);padding:12px 16px;border-radius:12px;font-size:14px}
 /* plans */
-.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
 .plan{background:var(--surface);border:2px solid var(--line);border-radius:16px;padding:16px 18px;display:flex;flex-direction:column;gap:10px;min-width:0}
 .plan[data-on="true"]{border-color:var(--accent)}
 .plan h3{margin:0;font-family:var(--font-head);font-size:19px;font-weight:600;display:flex;flex-wrap:wrap;align-items:baseline;gap:8px}
@@ -168,6 +169,11 @@ table#cmp th.on{background:var(--accent);color:#fff}
 .shot{background:var(--gold-soft);color:var(--gold-ink);border:2px dashed var(--gold);border-radius:14px;padding:12px 16px;font-size:14px;display:grid;grid-template-columns:36px 1fr;gap:10px;align-items:start}
 .shot svg{width:36px;height:36px}
 .shot b{display:block;font-size:15px}
+.savebtn{display:inline-block;font:inherit;font-weight:700;font-size:15px;padding:9px 18px;border-radius:99px;border:2px solid var(--accent);background:var(--accent);color:#fff;cursor:pointer;text-decoration:none}
+.savebtn:disabled{opacity:.6;cursor:wait}
+.savebtn:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.chkout{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:grid;gap:10px;font-size:14px}
+.chkout img{display:block;width:100%;max-width:420px;height:auto;border:1px solid var(--line);border-radius:8px}
 .chkbar{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:14px}
 .chkbar .bar{flex:1 1 200px;height:10px;border-radius:99px;background:var(--accent-soft);overflow:hidden}
 .chkbar .bar i{display:block;height:100%;width:0;background:var(--good)}
@@ -217,7 +223,7 @@ table#cmp th.on{background:var(--accent);color:#fff}
   <div class="hero-in">
     <div class="eyebrow">DISNEY ADVENTURE · 新加坡出發 · 3 晚</div>
     <h1>新加坡迪士尼郵輪行程</h1>
-    <p>2 人陽台房，週一上船、週四下船，在新加坡加住一晚，週五飛回台北。也列出「前一天（週日）先飛、多住一晚」的版本並排比較。資料查詢日 2026/11/12–15，機票不含廉價航空。</p>
+    <p>2 人陽台房，週一上船、週四下船，在新加坡加住一晚，週五飛回台北。也列出「前一天（週日）先飛、多住一晚」的版本，以及媽媽生日當天（3/8）上船的行程三。資料查詢日 2026/11/12–15，機票不含廉價航空。</p>
   </div>
 </header>
 
@@ -225,7 +231,7 @@ table#cmp th.on{background:var(--accent);color:#fff}
   <button type="button" class="top" id="to-top">↑ 頂端</button>
   <a href="#sec-prep"><b>1</b>氣候與穿著</a>
   <a href="#sec-mom"><b>＋</b>與媽媽同行</a>
-  <a href="#sec-plan"><b>2</b>兩個行程方案</a>
+  <a href="#sec-plan"><b>2</b>三個行程方案</a>
   <a href="#sec-cost"><b>3</b>費用明細</a>
   <a href="#sec-hotel"><b>4</b>住宿比較</a>
   <a href="#sec-fun"><b>5</b>船上與景點</a>
@@ -236,7 +242,7 @@ table#cmp th.on{background:var(--accent);color:#fff}
 <main>
 
 <section id="sec-prep">
-  <div><h2>氣候與穿著 <small>第 1 步</small></h2><p class="sub">1、2 月是新加坡的東北季風期，天氣熱又潮濕，雨具要帶。</p></div>
+  <div><h2>氣候與穿著 <small>第 1 步</small></h2><p class="sub">1 月到 3 月初是新加坡的東北季風期，天氣熱又潮濕，雨具要帶。</p></div>
   <div class="grid">
     <div class="card"><h3>氣溫</h3><div class="big">約 25–33°C</div><small>官網：白天約 31–33°C，夜間約 25–26°C，炎熱潮濕、偶有陣雨</small></div>
     <div class="card"><h3>降雨</h3><div class="big">1 月較多雨</div><small>季風約 12 月到 3 月初，前段多雷陣雨，2 月通常較乾。2 月平均約 9 個雨天（非官方）</small></div>
@@ -249,7 +255,7 @@ table#cmp th.on{background:var(--accent);color:#fff}
     <div class="fac"><svg><use href="#i-plug"/></svg><div><h3>插座</h3><p>房內 230V，有歐規、英規、中規插頭與 USB 孔。台灣的扁插頭要帶轉接頭。</p></div></div>
     <div class="fac"><svg><use href="#i-star"/></svg><div><h3>不能帶</h3><p>電子菸（新加坡全面禁止）、口香糖、刀具、熨斗、蠟燭、自製食物。</p></div></div>
   </div>
-  <p class="src">以上依<a href="https://disneycruise.disney.go.com/guest-services/cruise-packing-list/" target="_blank" rel="noopener">迪士尼新加坡行李清單</a>整理。「台灣扁插頭要轉接」與 2 月降雨天數為一般資訊或非官方資料。台灣 1、2 月偏冷，出發當天穿可脫的外層。</p>
+  <p class="src">以上依<a href="https://disneycruise.disney.go.com/guest-services/cruise-packing-list/" target="_blank" rel="noopener">迪士尼新加坡行李清單</a>整理。「台灣扁插頭要轉接」與 2 月降雨天數為一般資訊或非官方資料。台灣 1 到 3 月偏冷，出發當天穿可脫的外層。</p>
 </section>
 
 <section id="sec-mom">
@@ -270,16 +276,16 @@ table#cmp th.on{background:var(--accent);color:#fff}
 </section>
 
 <section id="sec-plan">
-  <div><h2>兩個行程方案 <small>第 2 步</small></h2><p class="sub">兩個方案的流程一樣，差在日期。每個方案再分「登船當天飛」與「前一天（週日）先飛」兩種，先看下方並排的總價，再切換出發方式看逐日行程。</p></div>
+  <div><h2>三個行程方案 <small>第 2 步</small></h2><p class="sub">三個方案的流程一樣，差在日期。行程三（3/8 上船）當天是媽媽生日。每個方案再分「登船當天飛」與「前一天（週日）先飛」兩種，先看下方並排的總價，再切換出發方式看逐日行程。</p></div>
   <div class="seg" role="group" aria-label="出發方式">
     <button type="button" class="segb" data-mode="same" aria-pressed="true">登船當天飛（週一出發）</button>
     <button type="button" class="segb" data-mode="early" aria-pressed="false">前一天先飛（週日出發）<span class="pill">建議</span></button>
   </div>
   <div class="plans" id="plans"></div>
-  <h3 class="sh">四種組合並排（2 人合計，新台幣）</h3>
+  <h3 class="sh">六種組合並排（新台幣，各項為 2 人金額，綠色列是平均每人）</h3>
   <div class="wrap"><table class="w1" id="cmp"></table></div>
   <p class="src" id="cmp-note"></p>
-  <div class="alert">兩個方案的郵輪折扣價都是「Guaranteed with Restrictions」：由迪士尼指定房間、訂位時全額付款、不可退款、不能改艙等或改日期。</div>
+  <div class="alert">行程一、二的郵輪價是折扣價「Guaranteed with Restrictions」：由迪士尼指定房間、訂位時全額付款、不可退款、不能改艙等或改日期。行程三（3/8）官網沒有列折扣價，是一般價，付款與取消條件我沒有查，訂位前要看官網說明。</div>
   <div>
     <h3 class="sh" id="plan-title">逐日行程</h3>
     <div class="ctl" style="margin-top:6px"><button class="mini" id="open-all">全部展開</button><button class="mini" id="close-all">全部收合</button></div>
@@ -307,9 +313,14 @@ table#cmp th.on{background:var(--accent);color:#fff}
     <tr><td>2027/2/8–11　春節週</td><td class="num">$1,121</td><td class="num">$2,242</td><td class="num">77,154</td></tr>
     <tr><td>2027/2/15–18</td><td class="num">$697 <s>$973</s></td><td class="num">$1,394</td><td class="num">49,170</td></tr>
     <tr><td>2027/2/22–25</td><td class="num">$715 <s>$939</s></td><td class="num">$1,430</td><td class="num">50,358</td></tr>
+    <tr><td>2027/3/1–4</td><td class="num">$610 <s>$982</s></td><td class="num">$1,220</td><td class="num">43,432</td></tr>
+    <tr class="best"><td>2027/3/8–11　行程三<span class="pill">媽媽生日</span></td><td class="num">$914<small class="m">沒有折扣價</small></td><td class="num">$1,827</td><td class="num">63,462</td></tr>
+    <tr><td>2027/3/15–18</td><td class="num">$652 <s>$1,054</s></td><td class="num">$1,304</td><td class="num">46,204</td></tr>
+    <tr><td>2027/3/22–25</td><td class="num">$875<small class="m">沒有折扣價</small></td><td class="num">$1,750</td><td class="num">60,902</td></tr>
+    <tr><td>2027/3/29–4/1</td><td class="num">$867<small class="m">沒有折扣價</small></td><td class="num">$1,734</td><td class="num">60,381</td></tr>
     </tbody>
   </table></div>
-  <p class="src">灰字為折扣前價格。官網共列 59 個 3 晚航次日期，這裡只列 2027 年、讀到 2/25 為止，3 月以後尚未查。</p>
+  <p class="src">灰字為折扣前價格。1、2 月查詢日 2026/11/12–13，3 月查詢日 2026/11/15。3 月的價格官網顯示到美分，這裡四捨五入到整數美元，台幣用原始金額計算。3/8 那週比前後兩週每人貴約 USD 260–300。4 月以後尚未查。</p>
 
   <h3 class="sh">機票：桃園往返新加坡（每人，含稅）</h3>
   <p class="sub">Google 航班的直飛結果，不考慮廉價航空。去程與回程在同一列，價格是同一組去回程班機。</p>
@@ -323,6 +334,13 @@ table#cmp th.on{background:var(--accent);color:#fff}
     <tr><td>長榮 BR 215<small class="m">09:35 → 14:30</small></td><td>長榮 BR 216<small class="m">15:45 → 20:15</small></td><td>未列出</td><td class="num">31,766</td><td>未查</td><td>未查</td></tr>
     <tr><th class="grp" colspan="6">前一天先飛：週日去程（1/17、1/31），2026/11/15 查詢</th></tr>
     <tr class="best"><td>華航 CI 753<small class="m">08:20 → 13:05</small></td><td>華航 CI 754<small class="m">14:25 → 19:05</small></td><td class="num">11,324</td><td>未查</td><td class="num">22,081<small class="m">Google 標示豪華經濟艙</small></td><td>未查</td></tr>
+    </tbody>
+  </table></div>
+  <div class="wrap"><table>
+    <thead><tr><th>行程三（2026/11/15 查詢）</th><th>去程</th><th>回程 3/12（五）</th><th>經濟艙</th></tr></thead>
+    <tbody>
+    <tr><td>登船當天飛 3/8（一）</td><td>華航 CI 753<small class="m">08:20 → 13:05</small></td><td>華航 CI 754<small class="m">14:25 → 19:05</small></td><td class="num">15,465</td></tr>
+    <tr class="best"><td>前一天先飛 3/7（日）</td><td>華航 CI 753<small class="m">08:20 → 13:05</small></td><td>華航 CI 754<small class="m">14:25 → 19:05</small></td><td class="num">15,465</td></tr>
     </tbody>
   </table></div>
   <p class="src">當天飛推薦第一列：華航 CI 753 在 13:05 抵達，趕得上登船。長榮 BR 215 下午 2:30 才抵達，要先確認登船截止時間。華航晚上 19:55 的去程班機隔天凌晨才抵達，已排除。「分段購票」是兩家航空各買一張，行李費另計。前一天先飛不用趕船，也可以選晚一點的週日班機，例如新航 14:10 → 18:55，但我只看到 Google 列出的起價（1/17 每人 13,396、1/31 每人 18,511，搭配的回程不一定是週五下午），沒有確認搭配 CI 754 的價格。週日去程的商務艙沒有查。</p>
@@ -375,6 +393,11 @@ table#cmp th.on{background:var(--accent);color:#fff}
         <option value="1121">2/8–11（春節週），$1,121</option>
         <option value="697">2/15–18，$697</option>
         <option value="715">2/22–25，$715</option>
+        <option value="610.06">3/1–4，$610</option>
+        <option value="913.54">3/8–11（行程三，媽媽生日），$914</option>
+        <option value="652.06">3/15–18，$652</option>
+        <option value="874.76">3/22–25，$875</option>
+        <option value="866.86">3/29–4/1，$867</option>
       </select></label>
     <label for="flight">機票（每人來回，新台幣）
       <select id="flight">
@@ -399,6 +422,9 @@ table#cmp th.on{background:var(--accent);color:#fff}
         <optgroup label="行程二 前一天飛 1/31→2/5">
           <option value="22081">華航 CI 753 + CI 754，22,081</option>
         </optgroup>
+        <optgroup label="行程三 3/8 或 3/7→3/12 經濟艙">
+          <option value="15465">華航 CI 753 + CI 754，15,465</option>
+        </optgroup>
       </select></label>
     <label for="hotel0">登船前一晚飯店（週日，含稅，新台幣）
       <select id="hotel0">
@@ -406,6 +432,10 @@ table#cmp th.on{background:var(--accent);color:#fff}
         <optgroup label="預設：濱海灣金沙（1/17 與 1/31 同價）">
           <option value="36690">濱海灣金沙 花園景雙加大雙人床房，36,690</option>
           <option value="38218">濱海灣金沙 市景雙加大雙人床房，38,218</option>
+        </optgroup>
+        <optgroup label="行程三 3/7">
+          <option value="32103">濱海灣金沙 花園景雙加大雙人床房，32,103</option>
+          <option value="33632">濱海灣金沙 市景雙加大雙人床房，33,632</option>
         </optgroup>
         <optgroup label="備選（1/17 最低價房型，床型未確認）">
           <option value="12574">浮爾頓酒店 約 12,574（推算）</option>
@@ -418,6 +448,10 @@ table#cmp th.on{background:var(--accent);color:#fff}
         <optgroup label="預設：濱海灣金沙（1/21 與 2/4 同價）">
           <option value="36834" selected>濱海灣金沙 雙加大雙人床房，36,834</option>
           <option value="38369">濱海灣金沙 市景雙加大雙人床房，38,369</option>
+        </optgroup>
+        <optgroup label="行程三 3/11">
+          <option value="30575">濱海灣金沙 花園景雙加大雙人床房，30,575</option>
+          <option value="32103">濱海灣金沙 市景雙加大雙人床房，32,103</option>
         </optgroup>
         <optgroup label="備選 行程一 1/21">
           <option value="11961">浮爾頓酒店 尊爵庭院雙床房，11,961</option>
@@ -438,8 +472,8 @@ table#cmp th.on{background:var(--accent);color:#fff}
     <label for="ride">Grab 車資估計（新幣，全程）<input id="ride" type="number" min="0" step="5" value="72"></label>
     <label for="ticket">景點門票（新幣，每人）<input id="ticket" type="number" min="0" step="1" value="46"></label>
     <div class="rows" id="rows"></div>
-    <div class="sum"><span>2 人合計（含稅、含小費、含餐飲、Grab 與門票估計）</span><strong id="sum">-</strong></div>
-    <div class="sum" style="border-top:0;padding-top:0"><span>平均每人</span><strong id="avg" style="font-size:24px">-</strong></div>
+    <div class="sum"><span>平均每人（含稅、含小費、含餐飲、Grab 與門票估計）</span><strong id="avg">-</strong></div>
+    <div class="sum" style="border-top:0;padding-top:0"><span>2 人合計</span><strong id="sum" style="font-size:24px">-</strong></div>
   </div>
   <p class="src">所有合計都是含稅、含小費：郵輪價含稅與港口費用再加小費，機票與飯店是含稅價。另加岸上餐飲、Grab 車資與溫室門票（可自行修改），一間房 2 人均分。金沙 1/21 與 2/4 同價、1/17 與 1/31 同價。1/17 的金沙最便宜雙床房是花園景房型，一般雙加大雙人床房沒有列出。行程二的 2/4 飯店價是頁面顯示價，沒有確認是否為折扣價。</p>
 </section>
@@ -449,7 +483,7 @@ table#cmp th.on{background:var(--accent);color:#fff}
   <div class="hotels">
     <article class="hotel wide"><img src="img/mbspool.jpg" alt="濱海灣金沙空中花園的無邊際泳池" loading="lazy"><div class="in">
       <h3>濱海灣金沙<span class="pill">預設</span></h3><div class="pr">36,834 起<small class="m">含稅。週四 1/21、2/4 雙加大雙人床房，房價 30,721 ＋ 稅 6,113</small></div>
-      <ul><li>評分 9.6，景點與燈光秀就在門口，到郵輪中心車程約 7 分鐘</li><li>前一天先飛的週日 1/17、1/31：花園景雙加大雙人床房 36,690（含稅，1/17 入住可在 1/15 前免費取消）</li><li>住客限定的無邊際泳池</li><li>價格最高；2027/1/6 起大廳整修，泳池 5 月起分階段施工</li></ul>
+      <ul><li>評分 9.6，景點與燈光秀就在門口，到郵輪中心車程約 7 分鐘</li><li>前一天先飛的週日 1/17、1/31：花園景雙加大雙人床房 36,690（含稅，1/17 入住可在 1/15 前免費取消）</li><li>行程三（3 月）比較便宜：3/11 週四 30,575、3/7 週日 32,103，都是花園景雙加大雙人床房</li><li>住客限定的無邊際泳池</li><li>價格最高；2027/1/6 起大廳整修，泳池 5 月起分階段施工</li></ul>
       <div class="cr">照片：Ank Kumar，<a href="https://commons.wikimedia.org/wiki/File:Infinity_Pool_at_Marina_Bay_Sands_SkyPark_Singapore_Ank_Kumar_Infosys_Limited_04.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a>，已縮小</div></div></article>
   </div>
   <details>
@@ -472,6 +506,7 @@ table#cmp th.on{background:var(--accent);color:#fff}
     <tr><th class="grp" colspan="4">含稅價（新台幣，2 人 1 間，房價加稅費）</th></tr>
     <tr><td class="lab">行程一 1/21 雙床房</td><td class="num">36,834<small class="m">雙加大雙人床房 45 m²<br>房價 30,721 ＋ 稅 6,113</small></td><td class="num">11,961<small class="m">尊爵庭院雙床房 42 m²<br>房價 9,795 ＋ 稅 2,166</small></td><td class="num">9,628<small class="m">豪華客房 24 m²，床型可選<br>房價 8,030 ＋ 稅 1,598</small></td></tr>
     <tr><td class="lab">行程二 2/4 雙床房</td><td class="num">36,834<small class="m">房價 30,721 ＋ 稅 6,113</small></td><td class="num">12,695<small class="m">傳統雙床房<br>房價 10,588 ＋ 稅 2,107</small></td><td class="num">10,671<small class="m">房價 8,900 ＋ 稅 1,771</small></td></tr>
+    <tr><td class="lab">行程三 3/11 與 3/7 雙床房<small class="m">2026/11/15 查詢</small></td><td class="num">30,575／32,103<small class="m">花園景雙加大雙人床房 45 m²<br>3/11 週四 30,575（3/9 前可免費取消）<br>3/7 週日 32,103（3/5 前可免費取消）</small></td><td>未查</td><td>未查</td></tr>
     <tr><td class="lab">前一天先飛：週日雙床房<small class="m">1/17、1/31，2026/11/15 查詢</small></td><td class="num">36,690<small class="m">花園景雙加大雙人床房 45 m²，附陽台<br>1/17 與 1/31 同價；1/17 入住可在 1/15 前免費取消<br>市景雙加大雙人床房 38,218</small></td><td class="num">≈12,574<small class="m">1/17 最低價房型，推算，床型未確認</small></td><td class="num">9,184<small class="m">1/17 最低價房型，床型未確認</small></td></tr>
     <tr><td class="lab">可免費取消的價格<small class="m">1/21</small></td><td>同價 36,834，1/19 前可免費取消</td><td class="num">15,027<small class="m">房價 12,306 ＋ 稅 2,721</small></td><td class="num">11,327<small class="m">房價 9,447 ＋ 稅 1,880<br>1/21 18:00 前可取消</small></td></tr>
     <tr><td class="lab">其他雙床房型<small class="m">1/21，含稅</small></td><td>市景雙加大雙人床房 38,369</td><td>傳統雙床房 13,034、Esplanade Twin 19,168，另有含早餐與 S$100 餐飲額度的 12,773</td><td>沒有，其他房型都是一張床</td></tr>
@@ -491,7 +526,7 @@ table#cmp th.on{background:var(--accent);color:#fff}
     <tr><td class="lab">到樟宜機場</td><td>約 16 公里（頁面）</td><td>車程約 25 分鐘（頁面）</td><td>約 18 公里（頁面）</td></tr>
     </tbody>
   </table></div>
-  <p class="src">含稅價 = Booking.com 顯示的房價加稅費。稅費約為房價的 19.9%，浮爾頓酒店依折扣前價格計稅，所以稅費看起來較高。標「≈」的是我用同一稅率推算，沒有逐一確認。金沙的雙床房是兩張加大雙人床，不是單人床。金沙整修公告：2027/1/6 到 2028/6/30 分階段整修，大廳與入口區自 1/6 起，空中花園與無邊際泳池自 5 月起，兩個行程的入住日都在整修期間，請向飯店確認。浮爾頓酒店頁面只列 1 間餐廳，不代表館內只有 1 間。早餐價是 Booking.com 顯示價，沒有確認是否每人計價。車程取自 Google 地圖，沒有計入路況。</p>
+  <p class="src">含稅價 = Booking.com 顯示的房價加稅費。稅費約為房價的 19.9%，浮爾頓酒店依折扣前價格計稅，所以稅費看起來較高。標「≈」的是我用同一稅率推算，沒有逐一確認。金沙的雙床房是兩張加大雙人床，不是單人床。金沙整修公告：2027/1/6 到 2028/6/30 分階段整修，大廳與入口區自 1/6 起，空中花園與無邊際泳池自 5 月起，三個行程的入住日都在整修期間，請向飯店確認。浮爾頓酒店頁面只列 1 間餐廳，不代表館內只有 1 間。早餐價是 Booking.com 顯示價，沒有確認是否每人計價。車程取自 Google 地圖，沒有計入路況。</p>
   <details>
     <summary><span class="d">更多飯店照片</span><span class="s">共 8 張：浮爾頓酒店 3 張、金沙 4 張、The Clan 1 張</span></summary>
     <div class="body"><div class="photos">
@@ -514,7 +549,19 @@ table#cmp th.on{background:var(--accent);color:#fff}
   <div class="photos">
     <figure><img src="img/ship.jpg" alt="停靠在碼頭的 Disney Adventure 郵輪" loading="lazy"><figcaption><b>Disney Adventure 郵輪</b>檔案頁沒標拍攝地點，不一定是新加坡。nagi usano，<a href="https://commons.wikimedia.org/wiki/File:Disney_Adventure_Disney_Cruise_Line_(55114526110).jpg" target="_blank" rel="noopener">CC BY 4.0</a>，已縮小</figcaption></figure>
   </div>
-  <p class="src">迪士尼官方照片有版權不能嵌入，也找不到自由授權的船上照片，所以用圖示卡片說明（本機版另外用網址嵌入了 8 張迪士尼照片）。內容來自 2026 年 3 月一篇 4 晚航次的乘船心得（非官方），3 晚航次的表演場次與輪替餐廳可能不同。</p>
+  <p class="src">下方 10 張船上照片來自 Disney Parks Blog，是用網址直接顯示迪士尼網站上的圖，沒有另存副本，需要連網才看得到。版權屬於 Disney，僅供家人規劃行程參考。最後 2 張是迪士尼公布的概念圖，不是實景。設施與餐點的文字說明來自 2026 年 3 月一篇 4 晚航次的乘船心得（非官方），3 晚航次的表演場次與輪替餐廳可能不同。</p>
+  <div class="photos">
+    <figure><img referrerpolicy="no-referrer" src="https://disneyparksblog.com/app/uploads/2026/03/Disney-Adventure-Singapore-Arrival-3-scaled-e1772576543782.jpg" alt="Disney Adventure 抵達新加坡" loading="lazy"><figcaption><b>抵達新加坡</b>© Disney，<a href="https://disneyparksblog.com/dcl/a-first-look-aboard-the-disney-adventure/" target="_blank" rel="noopener">Disney Parks Blog</a></figcaption></figure>
+    <figure><img referrerpolicy="no-referrer" src="https://disneyparksblog.com/app/uploads/2026/03/Disney-Imagination-Garden-Topiary_Disney-Adventure-1-1620x1080.jpg" alt="Disney Imagination Garden 的魔法師米奇花草雕塑" loading="lazy"><figcaption><b>Disney Imagination Garden</b>魔法師米奇花草雕塑。© Disney，<a href="https://disneyparksblog.com/dcl/a-first-look-aboard-the-disney-adventure/" target="_blank" rel="noopener">Disney Parks Blog</a></figcaption></figure>
+    <figure><img referrerpolicy="no-referrer" src="https://disneyparksblog.com/app/uploads/2026/03/Town-Square_Disney-Adventure-1-1620x1080.jpg" alt="Town Square 的商店與餐廳" loading="lazy"><figcaption><b>Town Square</b>商店、酒廊與餐廳。© Disney，<a href="https://disneyparksblog.com/dcl/a-first-look-aboard-the-disney-adventure/" target="_blank" rel="noopener">Disney Parks Blog</a></figcaption></figure>
+    <figure><img referrerpolicy="no-referrer" src="https://disneyparksblog.com/app/uploads/2026/03/San-Fransokyo-Street-_Disney-Adventure-1-1764x1080.jpg" alt="San Fransokyo Street 的街市風格遊戲區" loading="lazy"><figcaption><b>San Fransokyo Street</b>街市風格的遊戲與商店區。© Disney，<a href="https://disneyparksblog.com/dcl/a-first-look-aboard-the-disney-adventure/" target="_blank" rel="noopener">Disney Parks Blog</a></figcaption></figure>
+    <figure><img referrerpolicy="no-referrer" src="https://disneyparksblog.com/app/uploads/2026/03/Marvel-Landing_Disney-Adventure-2-1619x1080.jpg" alt="Marvel Landing 甲板上的遊樂設施" loading="lazy"><figcaption><b>Marvel Landing</b>海上迷你樂園。© Disney，<a href="https://disneyparksblog.com/dcl/a-first-look-aboard-the-disney-adventure/" target="_blank" rel="noopener">Disney Parks Blog</a></figcaption></figure>
+    <figure><img referrerpolicy="no-referrer" src="https://disneyparksblog.com/app/uploads/2026/03/Wayfinder-Bay_Disney-Adventure-1-1620x1080.jpg" alt="Wayfinder Bay 的露天泳池與劇場" loading="lazy"><figcaption><b>Wayfinder Bay</b>船尾的露天泳池與劇場。© Disney，<a href="https://disneyparksblog.com/dcl/a-first-look-aboard-the-disney-adventure/" target="_blank" rel="noopener">Disney Parks Blog</a></figcaption></figure>
+    <figure><img referrerpolicy="no-referrer" src="https://disneyparksblog.com/app/uploads/2026/03/Disney-Dicovery-Reef_Disney-Adventure-1-1708x1080.jpg" alt="Discovery Reef 的海底主題區" loading="lazy"><figcaption><b>Discovery Reef</b>海底主題的餐廳與商店區。© Disney，<a href="https://disneyparksblog.com/dcl/a-first-look-aboard-the-disney-adventure/" target="_blank" rel="noopener">Disney Parks Blog</a></figcaption></figure>
+    <figure><img referrerpolicy="no-referrer" src="https://disneyparksblog.com/app/uploads/2026/03/Woody-and-Jessies-Wild-Slides_Disney-Adventure-1-1719x1080.jpg" alt="胡迪與翠絲的紅黃色水上滑道" loading="lazy"><figcaption><b>Jessie &amp; Woody's Wild Slides</b>Toy Story Place 的水上滑道。© Disney，<a href="https://disneyparksblog.com/dcl/a-first-look-aboard-the-disney-adventure/" target="_blank" rel="noopener">Disney Parks Blog</a></figcaption></figure>
+    <figure><img referrerpolicy="no-referrer" src="https://disneyparksblog.com/app/uploads/2025/02/2025-dcl-adventure-duffy-and-friends-2-1024x659.jpg" alt="Duffy and The Friend Ship 表演概念圖" loading="lazy"><figcaption><b>表演：Duffy and The Friend Ship</b>Garden Stage 的達菲與好友表演，這張是概念圖。© Disney，<a href="https://disneyparksblog.com/dcl/new-marvel-experience-duffy-and-friends-to-debut-on-the-disney-adventure/" target="_blank" rel="noopener">Disney Parks Blog</a></figcaption></figure>
+    <figure><img referrerpolicy="no-referrer" src="https://disneyparksblog.com/app/uploads/2025/02/2025-dcl-adventure-duffy-and-friends-1-1595x1080.png" alt="Duffy and Friends 商店概念圖" loading="lazy"><figcaption><b>Duffy and Friends Shop</b>達菲與好友商店，這張是概念圖。© Disney，<a href="https://disneyparksblog.com/dcl/new-marvel-experience-duffy-and-friends-to-debut-on-the-disney-adventure/" target="_blank" rel="noopener">Disney Parks Blog</a></figcaption></figure>
+  </div>
   <details>
     <summary><span class="d">七個主題區</span><span class="s">花園、廣場、海底、海洋奇緣、大英雄天團、玩具總動員、漫威</span></summary>
     <div class="body"><div class="facs">
@@ -546,6 +593,18 @@ table#cmp th.on{background:var(--accent);color:#fff}
   </details>
   <p class="src">更多照片：<a href="https://laughingplace.com/disney-parks/disney-adventure-explore-photos" target="_blank" rel="noopener">Laughing Place</a>、<a href="https://wdwnt.com/2026/03/disney-adventures-seven-themed-areas-first-photos-before-maiden-voyage/" target="_blank" rel="noopener">WDWNT 七個主題區</a>、<a href="https://www.disneyfoodblog.com/disney-cruise-line-the-disney-adventure-cruise-ship/" target="_blank" rel="noopener">Disney Food Blog 餐點</a>、<a href="https://disneyparksblog.com/?p=383001" target="_blank" rel="noopener">Disney Parks Blog</a>。文字來源：<a href="https://www.littledayout.com/disney-adventure-cruise-guide-activities-review-travel/" target="_blank" rel="noopener">Little Day Out 乘船心得</a>。</p>
 
+  <h3 class="sh" id="bday">媽媽生日（3/8）可以怎麼慶祝</h3>
+  <p class="sub">行程三的上船日 3/8 就是媽媽生日。以下分成官網寫明的、要另外付費的，以及我沒有查證的。</p>
+  <ul class="notes">
+    <li><b>登記特殊節日（免費登記）：</b>迪士尼官網說生日、週年等都可以安排慶祝，建議出發至少 3 週前告知，船方會在主餐廳為你們安排。做法是登入官網 My Reservations，選「Special Requests」填表。<span class="tag">官網</span></li>
+    <li><b>房內佈置與禮物（另付費）：</b>可以加購鮮花、巧克力、氣泡酒，或主題房內佈置（In-Room Décor），送到客房。訂單要在出發 48 小時前送出。探險號有哪些品項與價格我沒有查，請看官網 <a href="https://disneycruise.disney.go.com/gifts-and-amenities/" target="_blank" rel="noopener">Onboard Gifts</a>。<span class="tag">官網</span><span class="tag todo">待確認</span></li>
+    <li><b>生日徽章與餐廳慶生：</b>常見的說法是可以向服務台索取生日徽章，晚餐時服務生會帶小蛋糕來唱生日歌。這是其他迪士尼郵輪的乘客經驗，探險號是否相同我沒有查證，上船後可以問服務台。<span class="tag todo">一般資訊</span></li>
+    <li><b>晚餐選早梯：</b>生日當天是上船日，晚餐選 17:45 的早梯，吃完還能看出港派對或表演。想吃好一點可以預約另收費的 Mike &amp; Sulley's（日式）或 Palo（成人專用義式）。<span class="tag todo">建議</span></li>
+    <li><b>建議前一天先飛：</b>登船當天飛的話，媽媽生日要凌晨 3–4 點出門。前一天（3/7）先飛，生日早上在金沙睡飽、吃早餐再上船。訂金沙時可以在備註欄寫是慶生入住，飯店有沒有安排我沒有查。<span class="tag todo">建議</span><span class="tag todo">待確認</span></li>
+    <li><b>下船後：</b>濱海灣花園的迪士尼花藝展 Disney Garden of Wonder 展到 2027/3/14，行程三下船日 3/11 還看得到。<span class="tag">官網</span></li>
+  </ul>
+  <p class="src">來源：<a href="https://disneycruise.disney.go.com/faq/onboard-services/special-occasions/" target="_blank" rel="noopener">迪士尼郵輪官網：特殊節日慶祝</a>（2026/11/15 查詢）。</p>
+
   <h3 class="sh">下船後的濱海灣景點</h3>
   <div class="photos">
     <figure><img src="img/mbs.jpg" alt="池塘後方的超級樹與濱海灣金沙酒店" loading="lazy"><figcaption><b>超級樹與濱海灣金沙</b>Danijel Mihajlovic，<a href="https://commons.wikimedia.org/wiki/File:Marina_Bay_Sands_from_Gardens_By_The_Bay.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a>，已縮小</figcaption></figure>
@@ -555,7 +614,7 @@ table#cmp th.on{background:var(--accent);color:#fff}
     <thead><tr><th>地點</th><th>內容</th><th>時間與票價</th><th>來源</th></tr></thead>
     <tbody>
     <tr><td>濱海灣花園</td><td>超級樹叢等戶外園區</td><td>戶外免費</td><td>非官方　<a href="https://www.youtube.com/watch?v=vM7Kyya2Or0" target="_blank" rel="noopener">影片</a></td></tr>
-    <tr><td>Flower Dome 與 Cloud Forest</td><td>兩座冷氣溫室（23–25°C）。Cloud Forest 目前有「Jurassic World: The Experience」，官網提醒有大聲音效與閃光；每座溫室最多停留 1 小時，不能重複入場</td><td>9:00–21:00。兩館套票成人 S$46（約 TWD 1,196），已列入預算。1/21、2/4、1/17、1/31 都不是維護休館日</td><td>官網　<a href="https://www.gardensbythebay.com.sg/en/things-to-do/attractions/flower-dome.html" target="_blank" rel="noopener">票價</a>　<a href="https://www.gardensbythebay.com.sg/en/plan-your-visit/opening-hours.html" target="_blank" rel="noopener">休館日</a></td></tr>
+    <tr><td>Flower Dome 與 Cloud Forest</td><td>兩座冷氣溫室（23–25°C）。Cloud Forest 目前有「Jurassic World: The Experience」，官網提醒有大聲音效與閃光；每座溫室最多停留 1 小時，不能重複入場</td><td>9:00–21:00。兩館套票成人 S$46（約 TWD 1,196），已列入預算。1/21、2/4、3/11 與 1/17、1/31、3/7 都不是維護休館日</td><td>官網　<a href="https://www.gardensbythebay.com.sg/en/things-to-do/attractions/flower-dome.html" target="_blank" rel="noopener">票價</a>　<a href="https://www.gardensbythebay.com.sg/en/plan-your-visit/opening-hours.html" target="_blank" rel="noopener">休館日</a></td></tr>
     <tr><td>Disney Garden of Wonder（Floral Fantasy）</td><td>迪士尼角色花藝展，有《玩具總動員 5》與《冰雪奇緣》，展期 2026/6/8–2027/3/14</td><td>兩館＋花藝展＋園區接駁車套票成人 S$73（約 TWD 1,898），比兩館套票每人多 S$27（約 TWD 702）。沒有列入預算</td><td>官網　<a href="https://www.gardensbythebay.com.sg/en/things-to-do/attractions/floral-fantasy.html" target="_blank" rel="noopener">介紹</a></td></tr>
     <tr><td>OCBC 空中步道</td><td>超級樹之間的高空步道</td><td>官網舊資料 S$14（約 TWD 364，期限到 2026/4）</td><td>官網舊資料　<a href="https://www.youtube.com/watch?v=6_HtlMvWV4o" target="_blank" rel="noopener">影片</a></td></tr>
     <tr><td>Garden Rhapsody</td><td>超級樹叢的免費燈光音樂秀</td><td>每晚 19:45 與 20:45，約 10–15 分鐘</td><td>非官方　<a href="https://www.youtube.com/watch?v=o2qzwFneqv8" target="_blank" rel="noopener">影片</a></td></tr>
@@ -567,12 +626,14 @@ table#cmp th.on{background:var(--accent);color:#fff}
 </section>
 
 <section id="sec-todo">
-  <div><h2>出發前待辦清單 <small>第 7 步</small></h2><p class="sub">照時間排序，做完就打勾。標「截圖」的項目，完成後請把確認畫面截圖存在手機裡。</p></div>
-  <div class="shot" role="note"><svg aria-hidden="true"><use href="#i-cam"/></svg><div><b>記得截圖保存</b>勾選紀錄只存在這台裝置的這個瀏覽器裡，換手機、換電腦或清除瀏覽資料就會消失，也不會同步給媽媽。每完成幾項，請把這份清單截圖存起來；訂位確認、電子機票、入境卡、保單等也都截圖，出國時沒有網路也打得開。</div></div>
+  <div><h2>出發前待辦清單 <small>第 7 步</small></h2><p class="sub">照時間排序，做完就打勾，再把勾選後的清單下載成圖片保存。標「截圖」的項目，完成後請把確認畫面截圖存在手機裡。</p></div>
+  <div class="shot" role="note"><svg aria-hidden="true"><use href="#i-cam"/></svg><div><b>下載勾選後的清單圖片</b>勾選紀錄只存在這台裝置的這個瀏覽器裡，換手機、換電腦或清除瀏覽資料就會消失，也不會同步給另一個人。每勾完幾項，按下面的按鈕把目前的清單存成一張圖片，可以放相簿或用 LINE 傳給對方。訂位確認、電子機票、入境卡、保單等畫面，還是要自己截圖保存，出國時沒有網路也打得開。
+    <div class="ctl" style="margin-top:10px"><button type="button" class="savebtn" id="chk-save">下載勾選清單圖片</button></div></div></div>
+  <div class="chkout" id="chk-out" hidden><p id="chk-msg">圖片已製作完成。如果沒有自動下載，請按「下載圖片」，或在手機上長按下方圖片選「儲存圖片」。</p><div class="ctl"><a class="savebtn" id="chk-link" href="#">下載圖片</a></div><img id="chk-img" alt=""></div>
   <div class="chkbar"><span id="chk-count">已完成 0 項</span><span class="bar" aria-hidden="true"><i id="chk-bar"></i></span><button type="button" class="mini" id="chk-open">全部展開</button><button type="button" class="mini" id="chk-reset">全部取消勾選</button></div>
   <div class="chkgrp" id="chk">
     <details open><summary><span class="d">現在到訂位前</span><span class="s" data-grp="0">6 項　決定方案，訂位前把價格重查一次</span></summary><div class="body"><ul class="chk">
-      <li><label><input type="checkbox" data-k="pick"><span>決定行程一（1/18）或行程二（2/1），以及登船當天飛或前一天先飛</span></label></li>
+      <li><label><input type="checkbox" data-k="pick"><span>決定行程一（1/18）、行程二（2/1）或行程三（3/8，媽媽生日），以及登船當天飛或前一天先飛</span></label></li>
       <li><label><input type="checkbox" data-k="pp"><span>確認兩人護照效期。一般說法是入境新加坡時要有 6 個月以上效期，請到外交部領事事務局網站確認<span class="tag todo">待確認</span></span></label></li>
       <li><label><input type="checkbox" data-k="rule"><span>確認可以接受折扣價的限制：迪士尼指定房間、全額付款、不可退款、不能改日期<span class="tag">官網</span></span></label></li>
       <li><label><input type="checkbox" data-k="recheck"><span>訂位前重查郵輪、機票、金沙價格（頁面價格查詢日 2026/11/12–15）</span></label></li>
@@ -588,6 +649,7 @@ table#cmp th.on{background:var(--accent);color:#fff}
     <details><summary><span class="d">訂位後到出發前一個月</span><span class="s" data-grp="2">7 項</span></summary><div class="body"><ul class="chk">
       <li><label><input type="checkbox" data-k="checkin"><span>郵輪線上報到，選到港時段（Port Arrival Time）與晚餐梯次（建議早梯 17:45），截圖確認畫面<span class="tag cam">截圖</span><span class="tag todo">待確認</span></span></label></li>
       <li><label><input type="checkbox" data-k="assist"><span>需要輪椅或協助通關的話，向華航與迪士尼申請，截圖申請結果<span class="tag cam">截圖</span><span class="tag todo">待確認</span></span></label></li>
+      <li><label><input type="checkbox" data-k="bday"><span>選行程三的話：出發 3 週前在迪士尼官網 My Reservations 的「Special Requests」登記媽媽生日，想訂房內佈置或花束也在這裡訂（出發 48 小時前截止）<span class="tag">官網</span></span></label></li>
       <li><label><input type="checkbox" data-k="fxcard"><span>查信用卡海外手續費、開通海外交易，記下海外掛失電話</span></label></li>
       <li><label><input type="checkbox" data-k="app"><span>下載並登入 Grab（綁信用卡）與迪士尼 Navigator App</span></label></li>
       <li><label><input type="checkbox" data-k="ticket"><span>決定要不要先買濱海灣花園溫室票（官網購票，指定日期、不可退），買了就截圖 QR Code<span class="tag cam">截圖</span></span></label></li>
@@ -622,7 +684,7 @@ table#cmp th.on{background:var(--accent);color:#fff}
       <li><label><input type="checkbox" data-k="airport"><span>返台日 10:45 前出發去機場</span></label></li>
     </ul></div></details>
   </div>
-  <p class="src">護照效期與入境卡的規定我沒有在官方網站查證，標「待確認」。勾選紀錄用瀏覽器的本機儲存功能保存，如果瀏覽器不允許，重新整理後就會清空，請以截圖為準。</p>
+  <p class="src">護照效期與入境卡的規定我沒有在官方網站查證，標「待確認」。勾選紀錄用瀏覽器的本機儲存功能保存，如果瀏覽器不允許，重新整理後就會清空，請以下載的圖片為準。</p>
 </section>
 
 <section id="sec-links">
@@ -719,6 +781,19 @@ const PLANS={
       ["價格比較","2/8–11 的春節週陽台房 $1,121，比 2/1–4 的 $691 高出約 6 成。"],
       ["天氣","2 月是東北季風後段，通常比 1 月乾，但年年差異大，仍要帶傘。"],
       ["金沙整修","金沙整修公告涵蓋 2027/1/6 到 2028/6/30，大廳與入口區自 1/6 起，空中花園與泳池自 5 月起分階段施工。"]
+     ]},
+  3:{name:"行程三",range:{same:"3/8（一）→ 3/12（五）",early:"3/7（日）→ 3/12（五）"},tag:"媽媽生日",bday:true,d0:"3/7",d:["3/8","3/9","3/10","3/11","3/12"],sail:913.54,flight:{same:15465,early:15465},hotel:30575,hotel0:32103,
+     points:["3/8 上船日就是媽媽生日","郵輪是一般價，每人比行程一貴約 USD 316","金沙 3 月比 1、2 月便宜約 6,000"],
+     notes:[
+      ["媽媽生日","3/8（一）是上船日，也是媽媽生日。出發 3 週前在迪士尼官網登記 Special Request，船方會在餐廳安排慶祝。細節看第 5 步「媽媽生日可以怎麼慶祝」。"],
+      ["郵輪價格","3/8–11 陽台房每人 $913.54，官網沒有列折扣價。前一週 3/1–4 是 $610、後一週 3/15–18 是 $652，都是折扣價但不含生日當天。"],
+      ["限制條件","3/8 是一般價，不是「Guaranteed with Restrictions」，應該可以自己選房間位置。付款與取消條件我沒有查，訂位前請看官網說明。"],
+      ["機票","華航 CI 753 去、CI 754 回，3/8 或 3/7 出發都是每人 15,465，前一天先飛不用多付機票錢。"],
+      ["前一天先飛","3/7（日）金沙花園景雙加大雙人床房 32,103，3/5 前可免費取消。生日早上不用趕飛機，建議選這個。"],
+      ["金沙","3/11（四）花園景雙加大雙人床房 30,575，3/9 前可免費取消。一般雙加大雙人床房沒有列出。浮爾頓與 The Clan 的 3 月價格沒有查。"],
+      ["額外花費","預估合計已含岸上餐飲、Grab 車資與溫室門票。不含船上酒類、特色餐廳、房內佈置、Wi-Fi 與其他景點。"],
+      ["天氣","3 月初是東北季風尾聲，通常比 1 月乾，仍要帶傘。這是一般說法，我沒有查 3 月的統計。"],
+      ["金沙整修","金沙整修公告涵蓋 2027/1/6 到 2028/6/30，大廳與入口區自 1/6 起，空中花園與泳池自 5 月起分階段施工。"]
      ]}
 };
 let cur=1, mode="same";
@@ -738,7 +813,7 @@ const YT="https://www.youtube.com/watch?v=";
 function li(t,x,k,l){return `<li><time>${t}</time><span>${x}${k?tg(...k.split(" ")):""}${l||""}</span></li>`}
 const day=(title,sum,items,open)=>`<details${open?" open":""}><summary><span class="d">${title}</span><span class="s">${sum}</span></summary><div class="body"><ol class="tl">${items.join("")}</ol></div></details>`;
 function days(p,m){
-  const d=p.d, out=[];
+  const d=p.d, out=[], BD=p.bday?"媽媽生日晚餐：事先登記 Special Request，請餐廳安排慶生。":"";
   if(m==="early") out.push(day(`第 0 天 ${p.d0}（週日）飛新加坡，住金沙`,"08:20 起飛 → 13:05 抵達 → 入住金沙、休息 → 晚上看 Spectra",[
     li("05:30","抵達桃園機場，辦理 CI 753 報到與託運，以起飛前約 3 小時為準","r"),
     li("08:20","桃園起飛，華航 CI 753","f"),
@@ -758,7 +833,7 @@ function days(p,m){
     li("到港時段前 30 分","叫車到濱海灣郵輪中心，車程約 7 分鐘。計程車、叫車在 2 樓下行李，行李交給行李員","m e",C("Grab 約",12)),
     li("依到港時段","報到、保安檢查、登船","q",L(YT+"hr1Bp3hCUxc","登船影片")),
     li("上船後","找房間、吃午餐、逛船。登船日的餐廳安排以 Navigator App 為準","q",L(YT+"qcYa-AYYm3Q","船上導覽")),
-    li("19:00","晚餐。託運行李約這時候起陸續送到房間，官網說可能到晚上才送達，泳衣、藥品放隨身包","o e")],true));
+    li("19:00",BD+"晚餐。託運行李約這時候起陸續送到房間，官網說可能到晚上才送達，泳衣、藥品放隨身包","o e")],true));
   else out.push(day(`第 1 天 ${d[0]}（週一）上船日`,"08:20 起飛 → 13:05 抵達 → 約 14:30 登船",[
     li("報到開放後","線上報到並選擇到港時段（Port Arrival Time），準備護照與 Navigator App 或 Port Arrival Form。開放日期我沒有查到","q"),
     li("05:30","抵達桃園機場，辦理 CI 753 報到與託運，以起飛前約 3 小時為準","r"),
@@ -768,7 +843,7 @@ function days(p,m){
     li("14:15","抵達郵輪中心，車程約 20–30 分鐘。計程車、叫車在 2 樓下行李；公車、捷運在 1 樓下行李，行李交給行李員","m e",C("Grab 約",30)),
     li("14:30","報到、保安檢查、登船。實際可登船的時間依你選的到港時段而定，若時段早於此時間，趕不上抵達時間","q",L(YT+"hr1Bp3hCUxc","登船影片")),
     li("15:30","上船後找房間、逛船、吃點東西","r",L(YT+"qcYa-AYYm3Q","船上導覽")),
-    li("19:00","晚餐。託運行李約這時候起陸續送到房間，官網說可能到晚上才送達，泳衣、藥品放隨身包","o e")],true));
+    li("19:00",BD+"晚餐。託運行李約這時候起陸續送到房間，官網說可能到晚上才送達，泳衣、藥品放隨身包","o e")],true));
   out.push(day(`第 2 天 ${d[1]}（週二）船上`,"全程在海上，不靠港",[
     li("09:00","早餐","r"),
     li("10:00","船上設施與活動，表演、活動與餐廳時間以 Navigator App 的行程表為準","q",L(YT+"JFfJl3QgVPs","海上過山車影片")),
@@ -817,12 +892,12 @@ function total(p,m){
   return {cruise,air,hotel0,hotel,meals,ride,ticket,sum:cruise+air+hotel0+hotel+meals+ride+ticket};
 }
 function renderPlans(){
-  $("plans").innerHTML=[1,2].map(n=>{
+  $("plans").innerHTML=[1,2,3].map(n=>{
     const p=PLANS[n], t=total(p,mode), a=total(p,"same"), b=total(p,"early");
     return `<div class="plan" data-on="${n===cur}"><h3>${p.name}<small>${p.range[mode]}　${p.tag}</small></h3>
-    <div class="tot"><span class="big">${f(t.sum)}</span><span class="src">${MODES[mode].name}，2 人合計（含稅、含小費），平均每人 ${f(t.sum/2)}</span></div>
+    <div class="tot"><span class="big">${f(t.sum/2)}</span><span class="src">平均每人（${MODES[mode].name}，含稅、含小費）。2 人合計 ${f(t.sum)}，下列各項是 2 人金額</span></div>
     <dl><dt>郵輪（含稅含小費）</dt><dd>${f(t.cruise)}</dd><dt>機票（含稅，每人 ${fmt(p.flight[mode])}）</dt><dd>${f(t.air)}</dd>${mode==="early"?`<dt>金沙週日一晚（含稅）</dt><dd>${f(t.hotel0)}</dd>`:""}<dt>金沙週四一晚（含稅）</dt><dd>${f(t.hotel)}</dd><dt>岸上餐飲（S$${DEF[mode].meals}）</dt><dd>${f(t.meals)}</dd><dt>Grab 車資（S$${DEF[mode].ride}）</dt><dd>${f(t.ride)}</dd><dt>溫室門票（S$${+$("ticket").value*2}）</dt><dd>${f(t.ticket)}</dd></dl>
-    <div class="alt"><span>當天飛 <b>${f(a.sum)}</b></span><span>前一天飛 <b>${f(b.sum)}</b></span><span>差 <b>${f(b.sum-a.sum)}</b></span></div>
+    <div class="alt"><span>每人：當天飛 <b>${f(a.sum/2)}</b></span><span>前一天飛 <b>${f(b.sum/2)}</b></span><span>差 <b>${f((b.sum-a.sum)/2)}</b></span></div>
     <ul>${p.points.map(x=>`<li>${x}</li>`).join("")}</ul>
     <button class="pick" data-plan="${n}" aria-pressed="${n===cur}">${n===cur?"正在看："+p.name:"看"+p.name+"的行程"}</button></div>`;
   }).join("");
@@ -830,16 +905,16 @@ function renderPlans(){
   renderCmp();
 }
 function renderCmp(){
-  const cols=[[1,"same"],[1,"early"],[2,"same"],[2,"early"]].map(([n,m])=>({n,m,t:total(PLANS[n],m)}));
+  const cols=[[1,"same"],[1,"early"],[2,"same"],[2,"early"],[3,"same"],[3,"early"]].map(([n,m])=>({n,m,t:total(PLANS[n],m)}));
   const R=[["郵輪陽台房（含稅含小費）","cruise"],["機票 2 人（含稅）","air"],["週日飯店（前一天飛才有）","hotel0"],["週四飯店（含稅）","hotel"],["岸上餐飲（估計）","meals"],["Grab 車資（估計）","ride"],["溫室門票","ticket"]];
   const on=(c)=>c.n===cur&&c.m===mode?' class="on num"':' class="num"';
   let h=`<thead><tr><th>項目</th>${cols.map(c=>`<th${on(c)}>${PLANS[c.n].name}<br>${MODES[c.m].short}<br><small style="font-weight:400">${PLANS[c.n].range[c.m]}</small></th>`).join("")}</tr></thead><tbody>`;
   h+=R.map(([lab,k])=>`<tr><td class="lab">${lab}</td>${cols.map(c=>`<td class="num">${c.t[k]?fmt(c.t[k]):"—"}</td>`).join("")}</tr>`).join("");
-  h+=`<tr class="tot"><td>2 人合計</td>${cols.map(c=>`<td class="num">${fmt(c.t.sum)}</td>`).join("")}</tr>`;
-  h+=`<tr><td class="lab">平均每人</td>${cols.map(c=>`<td class="num">${fmt(c.t.sum/2)}</td>`).join("")}</tr>`;
+  h+=`<tr><td class="lab">2 人合計</td>${cols.map(c=>`<td class="num">${fmt(c.t.sum)}</td>`).join("")}</tr>`;
+  h+=`<tr class="tot"><td>平均每人</td>${cols.map(c=>`<td class="num">${fmt(c.t.sum/2)}</td>`).join("")}</tr>`;
   h+=`<tr><td class="lab">比同方案當天飛多</td>${cols.map((c,i)=>`<td class="num">${c.m==="early"?"+"+fmt(c.t.sum-cols[i-1].t.sum):"—"}</td>`).join("")}</tr></tbody>`;
   $("cmp").innerHTML=h;
-  $("cmp-note").textContent=`藍底欄是目前選的組合。四欄都用金沙、華航 CI 753 + CI 754 經濟艙計算；台幣依試算表的匯率（1 美元 = ${$("fx").value}、1 新幣 = ${$("sgd").value}）。前一天飛多出的主要是金沙週日一晚，若週日改住 The Clan（1/17 最低價 9,184）可少約 2.7 萬，但房型與床型未確認。`;
+  $("cmp-note").textContent=`藍底欄是目前選的組合。六欄都用金沙、華航 CI 753 + CI 754 經濟艙計算；台幣依試算表的匯率（1 美元 = ${$("fx").value}、1 新幣 = ${$("sgd").value}）。前一天飛多出的主要是金沙週日一晚，若週日改住 The Clan（1/17 最低價 9,184）可少約 2.7 萬，但房型與床型未確認。`;
 }
 function renderExtra(){
   const r=+$("sgd").value||0, tk=+$("ticket").value;
@@ -886,7 +961,7 @@ function calc(){
 document.querySelectorAll(".segb").forEach(b=>b.addEventListener("click",()=>setMode(b.dataset.mode)));
 $("open-all").addEventListener("click",()=>document.querySelectorAll("#days details").forEach(d=>d.open=true));
 $("close-all").addEventListener("click",()=>document.querySelectorAll("#days details").forEach(d=>d.open=false));
-function route(){const m=/^#plan-([12])$/.exec(location.hash); if(m) showPlan(+m[1]);}
+function route(){const m=/^#plan-([123])$/.exec(location.hash); if(m) showPlan(+m[1]);}
 window.addEventListener("hashchange",route);
 $("to-top").addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
 /* 待辦清單：勾選狀態存在這個瀏覽器，存不了就只在這次開啟有效 */
@@ -911,6 +986,79 @@ boxes.forEach(b=>{
 $("chk-open").addEventListener("click",()=>document.querySelectorAll("#chk details").forEach(d=>d.open=true));
 $("chk-reset").addEventListener("click",()=>{boxes.forEach(b=>b.checked=false); ck={}; try{localStorage.removeItem(CK)}catch(e){} chkUpdate();});
 chkUpdate();
+/* 把目前的勾選狀態畫成一張圖片，供下載保存 */
+function wrapText(ctx,t,maxW){
+  const out=[]; let line="";
+  for(const ch of t){
+    if(ctx.measureText(line+ch).width>maxW&&line&&!"〕）」，。、；：".includes(ch)){out.push(line); line=ch;} else line+=ch;
+  }
+  if(line) out.push(line);
+  return out;
+}
+async function chkImage(){
+  try{ if(document.fonts&&document.fonts.ready) await document.fonts.ready; }catch(e){}
+  const W=1080, P=56, S=2, FONT='"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif';
+  const groups=[...document.querySelectorAll("#chk details")].map(d=>({
+    title:d.querySelector(".d").textContent,
+    items:[...d.querySelectorAll("li")].map(li=>{
+      const sp=li.querySelector("label span").cloneNode(true);
+      const tags=[...sp.querySelectorAll(".tag")].map(x=>x.textContent);
+      sp.querySelectorAll(".tag").forEach(x=>x.remove());
+      return {t:sp.textContent.trim()+(tags.length?"〔"+tags.join("・")+"〕":""),on:li.querySelector("input").checked};
+    })
+  }));
+  const done=boxes.filter(b=>b.checked).length;
+  const now=new Date(), pad=n=>String(n).padStart(2,"0");
+  const stamp=`${now.getFullYear()}/${pad(now.getMonth()+1)}/${pad(now.getDate())} ${pad(now.getHours())}:${pad(now.getMinutes())}`;
+  const c=document.createElement("canvas"), m=c.getContext("2d");
+  const IT=`400 28px ${FONT}`, LH=40, TW=W-P*2-52;
+  m.font=IT;
+  groups.forEach(g=>g.items.forEach(i=>i.lines=wrapText(m,i.t,TW)));
+  let H=P+60+44+50;
+  groups.forEach(g=>{H+=70; g.items.forEach(i=>H+=i.lines.length*LH+16); H+=14;});
+  H+=P+20;
+  c.width=W*S; c.height=H*S;
+  const x=c.getContext("2d"); x.scale(S,S); x.textBaseline="top";
+  x.fillStyle="#ffffff"; x.fillRect(0,0,W,H);
+  x.fillStyle="#0b2a73"; x.fillRect(0,0,W,14);
+  x.fillStyle="#f4b223"; x.fillRect(0,14,W,5);
+  let y=P;
+  x.fillStyle="#0d2150"; x.font=`700 44px ${FONT}`; x.fillText("新加坡迪士尼郵輪：出發前待辦清單",P,y); y+=60;
+  x.fillStyle="#586a8f"; x.font=`400 26px ${FONT}`; x.fillText(`已完成 ${done} / ${boxes.length} 項　・　${stamp} 存檔`,P,y); y+=44;
+  x.fillStyle="#e0eaff"; x.fillRect(P,y,W-P*2,12);
+  x.fillStyle="#1b6b46"; x.fillRect(P,y,(W-P*2)*(boxes.length?done/boxes.length:0),12); y+=50;
+  groups.forEach(g=>{
+    const n=g.items.filter(i=>i.on).length;
+    x.fillStyle="#e0eaff"; x.fillRect(P,y,W-P*2,52);
+    x.fillStyle="#1b4fd8"; x.font=`700 30px ${FONT}`; x.fillText(g.title,P+16,y+10);
+    x.font=`400 24px ${FONT}`; const cw=x.measureText(`${n} / ${g.items.length}`).width;
+    x.fillText(`${n} / ${g.items.length}`,W-P-16-cw,y+13); y+=70;
+    g.items.forEach(i=>{
+      x.lineWidth=3;
+      if(i.on){x.fillStyle="#1b6b46"; x.fillRect(P+4,y+4,30,30); x.strokeStyle="#ffffff"; x.beginPath(); x.moveTo(P+11,y+19); x.lineTo(P+17,y+26); x.lineTo(P+28,y+12); x.stroke();}
+      else{x.strokeStyle="#586a8f"; x.strokeRect(P+5.5,y+5.5,27,27);}
+      x.font=IT; x.fillStyle=i.on?"#586a8f":"#0d2150";
+      i.lines.forEach((l,k)=>x.fillText(l,P+52,y+k*LH));
+      y+=i.lines.length*LH+16;
+    });
+    y+=14;
+  });
+  x.fillStyle="#586a8f"; x.font=`400 22px ${FONT}`; x.fillText("綠色打勾＝已完成。這張圖是存檔當下的狀態，之後再勾選要重新下載。",P,y);
+  const name=`checklist_${now.getFullYear()}${pad(now.getMonth()+1)}${pad(now.getDate())}_${pad(now.getHours())}${pad(now.getMinutes())}.png`;
+  return new Promise(res=>c.toBlob(b=>res({blob:b,name,url:c.toDataURL("image/png")}),"image/png"));
+}
+$("chk-save").addEventListener("click",async()=>{
+  const btn=$("chk-save"); btn.disabled=true; const old=btn.textContent; btn.textContent="製作圖片中…";
+  try{
+    const {blob,name,url}=await chkImage();
+    const box=$("chk-out"); box.hidden=false;
+    $("chk-img").src=url; $("chk-img").alt="目前勾選狀態的待辦清單圖片";
+    const a=$("chk-link"); a.download=name;
+    try{ if(a.dataset.u) URL.revokeObjectURL(a.dataset.u); const u=URL.createObjectURL(blob); a.href=u; a.dataset.u=u; a.click(); }catch(e){ a.href=url; }
+    box.scrollIntoView({behavior:"smooth",block:"nearest"});
+  }catch(e){ $("chk-out").hidden=false; $("chk-msg").textContent="圖片製作失敗，請改用手機截圖。"; }
+  btn.disabled=false; btn.textContent=old;
+});
 const SECS=["sec-prep","sec-mom","sec-plan","sec-cost","sec-hotel","sec-fun","sec-todo","sec-links"];
 function activeNav(){
   let c=null;
