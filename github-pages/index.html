@@ -161,6 +161,11 @@ a.mini.gf{display:inline-block;text-decoration:none;font-weight:600}
 .seat{display:grid;grid-template-columns:minmax(0,260px) 1fr;gap:14px;align-items:start}
 .seat img{display:block;width:100%;border-radius:12px;border:1px solid var(--line)}
 @media (max-width:640px){.seat{grid-template-columns:1fr}}
+.optchk>span{flex:1;min-width:0}
+.optchk{display:flex;flex-direction:row!important;gap:10px;align-items:flex-start;padding:10px 14px;border:1px dashed var(--accent);border-radius:12px;background:var(--surface);font-weight:500;cursor:pointer}
+.optchk input{width:20px;height:20px;flex:none;margin-top:2px;accent-color:var(--accent)}
+.calc .optchk{grid-column:1/-1}
+.twd{color:var(--muted);font-size:.92em;white-space:nowrap}
 .links{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:12px}
 .links .card ul{margin:6px 0 0;padding-left:18px;display:grid;gap:6px;font-size:14px}
 .links .card h3{color:var(--fg);font-family:var(--font-head);font-size:16px;font-weight:600}
@@ -301,14 +306,16 @@ table#cmp th.on{background:var(--accent);color:#fff}
     <button type="button" class="segb" data-mode="early" aria-pressed="true">前一天先飛（週日出發）<span class="pill">建議</span></button>
     <button type="button" class="segb" data-mode="same" aria-pressed="false">登船當天飛（週一出發）</button>
   </div>
+  <label class="optchk"><input type="checkbox" class="onb-on"><span>把船上加購（可選，<span class="onb-amt"></span>）加進合計</span></label>
   <div class="plans" id="plans"></div>
   <h3 class="sh">同樣兩個方案，改搭商務艙</h3>
   <p class="sub">班機一樣是華航 CI 753 去、CI 754 回，只把機票換成商務艙，其餘項目不變。出發與回程都可以用貴賓室，說明在第 4 步「商務艙貴賓室」。</p>
   <div class="plans" id="plans-biz"></div>
-  <h3 class="sh">四種組合並排</h3>
+  <details id="cmp-fold"><summary><span class="d">四種組合並排</span><span class="s">兩個檔期 × 兩種出發方式的金額對照，點這裡展開</span></summary><div class="body">
   <p class="sub">備註：金額是新台幣，各項為 2 人金額，綠色列是平均每人。</p>
   <div class="wrap"><table class="w1" id="cmp"></table></div>
   <p class="src" id="cmp-note"></p>
+  </div></details>
   <div class="alert">行程一、二的郵輪價是折扣價「Guaranteed with Restrictions」：由迪士尼指定房間、訂位時全額付款、不可退款、不能改艙等或改日期。</div>
   <details open id="vids"><summary><span class="d">近 6 個月的中文介紹影片</span><span class="s">8 支，點這裡收合或展開</span></summary><div class="body">
   <p class="sub">YouTube 上 2026 年 6 月到 11 月發布的中文影片，新的排前面。點卡片會在新分頁開啟 YouTube。</p>
@@ -478,12 +485,14 @@ table#cmp th.on{background:var(--accent);color:#fff}
   <div class="card seat">
     <figure style="margin:0"><img referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Premium_Business_class_of_China_Airlines_(A350-900)_01.jpg?width=640" alt="華航 A350-900 豪華商務艙的座椅與客艙" loading="lazy" onerror="this.closest('figure').remove()"><figcaption class="src" style="margin-top:6px">華航 A350-900 豪華商務艙。照片：Freedomwk，<a href="https://commons.wikimedia.org/wiki/File:Premium_Business_class_of_China_Airlines_(A350-900)_01.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a>，用網址直接顯示</figcaption></figure>
     <div>
-      <h3>CI 753 的機型</h3><div class="big">Airbus A350</div>
+      <h3>CI 753 與 CI 754 的機型</h3><div class="big">Airbus A350</div>
       <ul class="notes" style="margin-top:8px">
-        <li><b>查到的：</b>Google 航班顯示 2027/3/1 的 CI 753 機型是 Airbus A350，經濟艙腿部空間 81 公分，座位有電源插座與 USB、隨選影片，Wi-Fi 要付費。<span class="tag">航班</span></li>
+        <li><b>查到的：</b>Google 航班顯示去程 CI 753（1/18、3/1）與回程 CI 754（1/22、3/5）的機型都是 Airbus A350，經濟艙腿部空間 81 公分，座位有電源插座與 USB、隨選影片，Wi-Fi 要付費。週日出發的 1/17、2/28 沒有另外點開看。<span class="tag">航班</span></li>
         <li><b>座椅：</b>華航 A350-900 的豪華商務艙一般介紹是一排 4 個座位（1-2-1），每個座位都直通走道，椅背可以放平成床。這是常見的介紹，我沒有在華航官網逐項核對，座位數與螢幕尺寸也沒有查。<span class="tag todo">一般資訊</span></li>
         <li><b>兩人同行怎麼選位：</b>中間兩個座位相鄰，方便和媽媽說話；靠窗的是單人座，比較有隱私但兩人分開。<span class="tag todo">建議</span></li>
-        <li><b>可能換機型：</b>我只看了 3/1 去程這一班，其他日期與回程 CI 754 沒有逐一查。航空公司可能臨時更換機型，以訂位時與出發前的顯示為準。<span class="tag todo">待確認</span></li>
+        <li><b>過去派過的機型（參考）：</b>幾個航班追蹤網站列的 2026 年 6 到 8 月班表，CI 753／754 都是 A350-900。另有一個訂票網站寫 CI 753 最常用的是 Airbus A330-300，這可能是較舊的資料。<span class="tag todo">非官方</span></li>
+        <li><b>如果換成 A330-300：</b>華航 A330-300 的商務艙一般介紹是一排 6 個座位（2-2-2），靠窗的座位要跨過鄰座才能到走道，座椅比 A350 舊。能不能完全放平我沒有查，也沒有找到可以自由使用的照片。<span class="tag todo">一般資訊</span><span class="tag todo">待確認</span></li>
+        <li><b>可能換機型：</b>航空公司可能臨時更換機型，以訂位時與出發前的顯示為準。訂位後可以在華航網站的選位畫面看座位圖，1-2-1 就是 A350。<span class="tag todo">待確認</span></li>
       </ul>
     </div>
   </div>
@@ -516,8 +525,9 @@ table#cmp th.on{background:var(--accent);color:#fff}
   <div class="wrap"><table class="w1" id="extra"></table></div>
   <p class="src">不含：船上酒類與特調飲料、珍珠奶茶店、特色餐廳（Palo、Mike &amp; Sulley's）、船上 Wi-Fi、岸上活動、OCBC 空中步道等其他景點、飯店早餐加購與紀念品。餐飲與車資是依搜尋到的行情推估，實際請以 Grab App 叫車前的報價為準。門票取自濱海灣花園官網（2026/11/15 查詢，含消費稅，非居民成人價，官網沒有列長者優惠）。來源：<a href="https://www.gardensbythebay.com.sg/en/things-to-do/attractions/flower-dome.html" target="_blank" rel="noopener">濱海灣花園官網票價</a>、<a href="https://www.singapore-spirit.com/guides/changi-airport-to-city/" target="_blank" rel="noopener">Changi 機場到市區交通</a>、<a href="https://www.trvlogue.com/en/singapore-changi-airport-transfer-guide" target="_blank" rel="noopener">Grab 機場接送指南</a>、<a href="https://www.smartcalculator.sg/articles/singapore-dining-out-costs-2026" target="_blank" rel="noopener">新加坡 2026 外食價格</a>。</p>
 
-  <h3 class="sh" id="onboard">船上加購預估（可選，已算進合計）</h3>
-  <p class="sub">船費已含主餐廳與自助餐、快餐、客房送餐、汽水茶咖啡、表演與多數設施，小費也已算進合計。下面三項是可選的加購，2 人、3 晚共 US$300（約 TWD 9,900，每人約 4,950），已經加進方案卡、並排表與試算表的合計。不打算買的話，把試算表的「船上加購」改成 0。</p>
+  <h3 class="sh" id="onboard">船上加購預估（可選，勾選後才算進合計）</h3>
+  <p class="sub">船費已含主餐廳與自助餐、快餐、客房送餐、汽水茶咖啡、表演與多數設施，小費也已算進合計。下面三項是可選的加購，2 人、3 晚共 US$300（約 TWD 9,900，每人約 4,950）。預設沒有算進合計；勾選下面的方塊，方案卡、並排表與試算表的合計才會加上這筆。金額可以在試算表的「船上加購」修改。</p>
+  <label class="optchk"><input type="checkbox" class="onb-on"><span>把船上加購（可選，<span class="onb-amt"></span>）加進合計</span></label>
   <div class="wrap"><table>
     <thead><tr><th>項目（都是可選）</th><th>單價（美元）</th><th>2 人預估</th><th>約台幣</th><th>價格來源</th></tr></thead>
     <tbody>
@@ -637,9 +647,10 @@ table#cmp th.on{background:var(--accent);color:#fff}
     <label for="meals">餐飲估計（新幣，2 人，岸上）<input id="meals" type="number" min="0" step="5" value="156"></label>
     <label for="ride">Grab 車資估計（新幣，全程）<input id="ride" type="number" min="0" step="5" value="72"></label>
     <label for="ticket">景點門票（新幣，每人）<input id="ticket" type="number" min="0" step="1" value="46"></label>
-    <label for="onb">船上加購（美元，2 人，可選）<input id="onb" type="number" min="0" step="10" value="300"></label>
+    <label for="onb">船上加購（美元，2 人，可選，勾選才計入）<input id="onb" type="number" min="0" step="10" value="300"></label>
+    <label class="optchk"><input type="checkbox" class="onb-on"><span>把船上加購（可選，<span class="onb-amt"></span>）加進合計</span></label>
     <div class="rows" id="rows"></div>
-    <div class="sum"><span>平均每人（含稅、含小費、含餐飲、Grab、門票與船上加購估計）</span><strong id="avg">-</strong></div>
+    <div class="sum"><span>平均每人（含稅、含小費、含餐飲、Grab 與門票估計；船上加購勾選才計入）</span><strong id="avg">-</strong></div>
     <div class="sum" style="border-top:0;padding-top:0"><span>2 人合計</span><strong id="sum" style="font-size:24px">-</strong></div>
   </div>
   <p class="src">所有合計都是含稅、含小費：郵輪價含稅與港口費用再加小費，機票與飯店是含稅價。另加岸上餐飲、Grab 車資與溫室門票（可自行修改），一間房 2 人均分。1/17 的金沙最便宜雙床房是花園景房型，一般雙加大雙人床房沒有列出。</p>
@@ -900,6 +911,7 @@ const PLANS={
 let cur=1, mode="early", cab="eco";
 const CABS={eco:"經濟艙",biz:"商務艙"};
 const fare=(p,m,c)=>(c==="biz"?p.biz:p.flight)[m];
+let onbOn=false;
 const TAGS={o:["官網",0],f:["航班",0],m:["官網地圖",0],e:["估計",1],r:["建議",1],q:["待確認",1],x:["非官方",1],g:["一般資訊",1]};
 const tg=(...k)=>k.map(x=>`<span class="tag${TAGS[x][1]?" todo":""}">${TAGS[x][0]}</span>`).join("");
 const L=(u,t)=>`<a class="lk" href="${u}" target="_blank" rel="noopener">${t}</a>`;
@@ -992,7 +1004,7 @@ function days(p,m){
 function total(p,m,c){
   const fx=+$("fx").value, tip=+$("tip").value, sgd=+$("sgd").value, tk=+$("ticket").value;
   const cruise=p.sail*2*fx+tip*3*2*fx, air=fare(p,m,c)*2, hotel0=m==="early"?p.hotel0:0, hotel=p.hotel;
-  const meals=DEF[m].meals*sgd, ride=DEF[m].ride*sgd, ticket=tk*2*sgd, onb=(+$("onb").value||0)*fx;
+  const meals=DEF[m].meals*sgd, ride=DEF[m].ride*sgd, ticket=tk*2*sgd, onb=onbOn?(+$("onb").value||0)*fx:0;
   return {cruise,air,hotel0,hotel,meals,ride,ticket,onb,sum:cruise+air+hotel0+hotel+meals+ride+ticket+onb};
 }
 function renderPlans(){
@@ -1000,7 +1012,7 @@ function renderPlans(){
     const p=PLANS[n], t=total(p,mode,c), a=total(p,"same",c), b=total(p,"early",c), on=n===cur&&c===cab, nm=p.name+(c==="biz"?" 商務艙":"");
     return `<div class="plan" data-on="${on}"><h3>${nm}<small>${p.range[mode]}　${p.tag}</small></h3>
     <div class="tot"><span class="big">${f(t.sum/2)}</span><span class="src">平均每人（${MODES[mode].name}、${CABS[c]}，含稅、含小費）。2 人合計 ${f(t.sum)}，下列各項是 2 人金額</span></div>
-    <dl><dt>郵輪（含稅含小費）</dt><dd>${f(t.cruise)}</dd><dt>機票（${CABS[c]}，含稅，每人 ${fmt(fare(p,mode,c))}）</dt><dd>${f(t.air)}</dd>${mode==="early"?`<dt>Orchid Hotel 週日一晚（含稅）</dt><dd>${f(t.hotel0)}</dd>`:""}<dt>金沙週四一晚（含稅）</dt><dd>${f(t.hotel)}</dd><dt>岸上餐飲（S$${DEF[mode].meals}）</dt><dd>${f(t.meals)}</dd><dt>Grab 車資（S$${DEF[mode].ride}）</dt><dd>${f(t.ride)}</dd><dt>溫室門票（S$${+$("ticket").value*2}）</dt><dd>${f(t.ticket)}</dd><dt>船上加購（可選，US$${+$("onb").value||0}）</dt><dd>${f(t.onb)}</dd></dl>
+    <dl><dt>郵輪（含稅含小費）</dt><dd>${f(t.cruise)}</dd><dt>機票（${CABS[c]}，含稅，每人 ${fmt(fare(p,mode,c))}）</dt><dd>${f(t.air)}</dd>${mode==="early"?`<dt>Orchid Hotel 週日一晚（含稅）</dt><dd>${f(t.hotel0)}</dd>`:""}<dt>金沙週四一晚（含稅）</dt><dd>${f(t.hotel)}</dd><dt>岸上餐飲（S$${DEF[mode].meals}）</dt><dd>${f(t.meals)}</dd><dt>Grab 車資（S$${DEF[mode].ride}）</dt><dd>${f(t.ride)}</dd><dt>溫室門票（S$${+$("ticket").value*2}）</dt><dd>${f(t.ticket)}</dd>${onbOn?`<dt>船上加購（可選，US$${+$("onb").value||0}）</dt><dd>${f(t.onb)}</dd>`:""}</dl>
     <div class="alt"><span>每人：前一天飛 <b>${f(b.sum/2)}</b></span><span>當天飛 <b>${f(a.sum/2)}</b></span><span>差 <b>${f((b.sum-a.sum)/2)}</b></span></div>
     <ul>${(c==="biz"?[`比經濟艙每人多 ${f(fare(p,mode,"biz")-fare(p,mode,"eco"))}`,"桃園與樟宜都可用貴賓室","班機與逐日行程和經濟艙相同"]:p.points).map(x=>`<li>${x}</li>`).join("")}</ul>
     <button class="pick" data-plan="${n}" data-cab="${c}" aria-pressed="${on}">${on?"正在看："+nm:"看"+nm+"的行程"}</button></div>`;
@@ -1041,6 +1053,31 @@ function renderExtra(){
   $("fx-need").textContent=`S$${all}`;
   $("fx-need-s").textContent=`約 TWD ${fmt(all*r)}（${MODES[mode].name}，岸上餐飲、Grab 與門票合計）。其中多數可刷卡，現金準備 S$100–200 即可`;
 }
+/* 所有 S$ 金額後面自動補上台幣，匯率改了會更新 */
+function annotateSGD(){
+  const rate=+$("sgd").value||0, root=document.querySelector("main");
+  const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT), nodes=[];
+  while(w.nextNode()) nodes.push(w.currentNode);
+  const re=/S\$\s?(\d[\d,]*)(?:–(\d[\d,]*))?/g;
+  nodes.forEach(nd=>{
+    const pe=nd.parentElement;
+    if(!pe||pe.closest("script,style,dt,#rows,#fx-need,.cost,.twd,select,th")) return;
+    const s=nd.nodeValue; if(s.indexOf("S$")<0) return;
+    let m, last=0, frag=null; re.lastIndex=0;
+    while((m=re.exec(s))){
+      const end=m.index+m[0].length, rest=s.slice(end,end+14);
+      if(/TWD|台幣/.test(rest)) continue;
+      if(end===s.length&&nd.nextSibling&&nd.nextSibling.nodeType===1&&nd.nextSibling.classList.contains("twd")) continue;
+      const td=pe.closest("td"); if(td&&td.nextElementSibling&&/TWD/.test(td.nextElementSibling.textContent)&&!/[，。]/.test(td.textContent)) continue;
+      frag=frag||document.createDocumentFragment();
+      frag.appendChild(document.createTextNode(s.slice(last,end)));
+      const sp=document.createElement("span"); sp.className="twd"; sp.dataset.a=m[1].replace(/,/g,""); if(m[2]) sp.dataset.b=m[2].replace(/,/g,"");
+      frag.appendChild(sp); last=end;
+    }
+    if(frag){frag.appendChild(document.createTextNode(s.slice(last))); nd.parentNode.replaceChild(frag,nd);}
+  });
+  root.querySelectorAll(".twd").forEach(sp=>{sp.textContent=`（約 TWD ${fmt(+sp.dataset.a*rate)}${sp.dataset.b?"–"+fmt(+sp.dataset.b*rate):""}）`;});
+}
 function setMode(m){
   mode=m;
   document.querySelectorAll(".segb[data-mode]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.mode===m)));
@@ -1064,17 +1101,19 @@ function calc(){
   const cruise=+$("sail").value*2*fx, tip=+$("tip").value*3*2*fx, air=+$("flight").value*2, hotel0=+$("hotel0").value, hotel=+$("hotel").value;
   const ms=+$("meals").value, rs=+$("ride").value, ts=+$("ticket").value*2;
   const meals=ms*sgd, ride=rs*sgd, ticket=ts*sgd;
-  const onb=(+$("onb").value||0)*fx;
+  const onb=onbOn?(+$("onb").value||0)*fx:0;
+  document.querySelectorAll(".onb-amt").forEach(e=>e.textContent=`US$${+$("onb").value||0}，約 TWD ${fmt((+$("onb").value||0)*fx)}`);
   const all=cruise+tip+air+hotel0+hotel+meals+ride+ticket+onb;
-  $("rows").innerHTML=[["郵輪陽台房（2 人，含稅）",cruise],["小費（2 人，3 晚）",tip],["機票（2 人，含稅）",air],["登船前一晚飯店（週日，含稅）",hotel0],["下船後飯店（週四，含稅）",hotel],[`岸上餐飲（S$${ms}，估計）`,meals],[`Grab 車資（S$${rs}，估計）`,ride],[`景點門票（S$${ts}）`,ticket],[`船上加購（US$${+$("onb").value||0}，可選）`,onb]]
+  $("rows").innerHTML=[["郵輪陽台房（2 人，含稅）",cruise],["小費（2 人，3 晚）",tip],["機票（2 人，含稅）",air],["登船前一晚飯店（週日，含稅）",hotel0],["下船後飯店（週四，含稅）",hotel],[`岸上餐飲（S$${ms}，估計）`,meals],[`Grab 車資（S$${rs}，估計）`,ride],[`景點門票（S$${ts}）`,ticket],[`船上加購（US$${+$("onb").value||0}，可選，${onbOn?"已勾選":"未勾選"}）`,onb]]
     .map(([a,b])=>`<div><span>${a}</span><span class="num">${f(b)}</span></div>`).join("");
   $("sum").textContent=f(all);
   $("avg").textContent=f(all/2);
-  renderPlans(); renderExtra(); refreshCosts();
+  renderPlans(); renderExtra(); refreshCosts(); annotateSGD();
 }
 ["sail","flight","hotel0","hotel","fx","tip","sgd","meals","ride","ticket","onb"].forEach(i=>{$(i).addEventListener("input",calc);$(i).addEventListener("change",calc)});
 document.querySelectorAll(".segb[data-mode]").forEach(b=>b.addEventListener("click",()=>setMode(b.dataset.mode)));
 document.querySelectorAll(".segb[data-plan]").forEach(b=>b.addEventListener("click",()=>showPlan(+b.dataset.plan)));
+document.querySelectorAll(".onb-on").forEach(c=>c.addEventListener("change",()=>{onbOn=c.checked;document.querySelectorAll(".onb-on").forEach(x=>x.checked=onbOn);calc();}));
 $("open-all").addEventListener("click",()=>document.querySelectorAll("#days details").forEach(d=>d.open=true));
 $("close-all").addEventListener("click",()=>document.querySelectorAll("#days details").forEach(d=>d.open=false));
 function route(){const m=/^#plan-([12])$/.exec(location.hash); if(m) showPlan(+m[1]);}
