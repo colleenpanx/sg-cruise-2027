@@ -77,10 +77,10 @@ small.m{display:block;color:var(--muted);font-size:12px}
 .card h3{margin:0 0 4px;font-size:14px;color:var(--muted);font-weight:500}
 .big{font-family:var(--font-head);font-size:24px;color:var(--accent);line-height:1.25}
 .card small{color:var(--muted);display:block}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:12px}
 .alert{background:var(--gold-soft);color:var(--gold-ink);padding:12px 16px;border-radius:12px;font-size:14px}
 /* plans */
-.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:14px}
 .plan{background:var(--surface);border:2px solid var(--line);border-radius:16px;padding:16px 18px;display:flex;flex-direction:column;gap:10px;min-width:0}
 .plan[data-on="true"]{border-color:var(--accent)}
 .plan h3{margin:0;font-family:var(--font-head);font-size:19px;font-weight:600;display:flex;flex-wrap:wrap;align-items:baseline;gap:8px}
@@ -119,13 +119,13 @@ details>.body{padding:0 16px 14px;display:flex;flex-direction:column;gap:12px}
 .ctl{display:flex;gap:8px;flex-wrap:wrap}
 .mini{font:inherit;font-size:13px;padding:4px 12px;border-radius:99px;border:1px solid var(--line);background:var(--surface);color:var(--accent);cursor:pointer}
 /* photos */
-.photos{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.photos{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:12px}
 .photos figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;min-width:0}
 .photos img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;background:var(--accent-soft)}
 .photos figcaption{padding:8px 12px 10px;font-size:12px;color:var(--muted);line-height:1.5}
 .photos figcaption b{display:block;font-size:13px;color:var(--fg);font-weight:500}
 /* hotel cards */
-.hotels{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px}
+.hotels{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:14px}
 .hotel{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
 .hotel img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;background:var(--accent-soft)}
 .hotel .in{padding:12px 16px 16px;display:flex;flex-direction:column;gap:8px}
@@ -135,13 +135,13 @@ details>.body{padding:0 16px 14px;display:flex;flex-direction:column;gap:12px}
 .hotel .cr{font-size:11px;color:var(--muted)}
 .hotel.wide{flex-direction:row;flex-wrap:wrap}.hotel.wide img{flex:1 1 300px;width:auto;min-width:0;max-height:300px;aspect-ratio:auto}.hotel.wide .in{flex:1 1 300px}
 /* icon cards */
-.facs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.facs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px}
 .fac{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px;display:grid;grid-template-columns:40px 1fr;gap:12px;min-width:0}
 .fac svg{width:40px;height:40px}
 .fac h3{margin:0 0 2px;font-family:var(--font-head);font-size:15px;font-weight:600}
 .fac p{font-size:13px;color:var(--muted);line-height:1.55}
 .sa{fill:var(--accent)}.sg{fill:var(--gold)}.sw{fill:var(--surface)}
-.vids{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.vids{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:12px}
 .vid{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;min-width:0;color:var(--fg);text-decoration:none}
 .vid:hover{border-color:var(--accent)}
 .vid img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--accent-soft)}
@@ -149,11 +149,19 @@ details>.body{padding:0 16px 14px;display:flex;flex-direction:column;gap:12px}
 .vid b{font-size:15px;font-weight:600;line-height:1.4;color:var(--accent)}
 .vid .vm{font-size:12px;color:var(--muted)}
 .vid .vs{font-size:13px;line-height:1.6}
-.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:12px}
+.igs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px}
+.ig{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;min-width:0}
+.ig iframe{display:block;width:100%;height:440px;border:0;background:var(--accent-soft)}
+.ig .vb{display:flex;flex-direction:column;gap:4px;padding:10px 12px 12px}
+.ig a{text-decoration:none}
+.ig b{font-size:15px;font-weight:600;line-height:1.4;color:var(--accent)}
+.ig .vm{font-size:12px;color:var(--muted)}
+.ig .vs{font-size:13px;line-height:1.6}
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:12px}
 .links .card ul{margin:6px 0 0;padding-left:18px;display:grid;gap:6px;font-size:14px}
 .links .card h3{color:var(--fg);font-family:var(--font-head);font-size:16px;font-weight:600}
 /* calculator */
-.calc{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.calc{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
 label{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--muted)}
 input,select{font:inherit;font-size:15px;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px;min-width:0}
 input:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
@@ -175,7 +183,7 @@ table#cmp th.on{background:var(--accent);color:#fff}
 .plan .alt b{font-family:var(--font-num);color:var(--fg);font-weight:500}
 /* money */
 .tw{display:block;color:var(--muted);font-size:12px;font-family:var(--font-num)}
-.fxgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.fxgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px}
 .fxgrid .card h3{color:var(--fg);font-family:var(--font-head);font-size:16px;font-weight:600}
 .fxgrid .card ul{margin:6px 0 0;padding-left:18px;display:grid;gap:6px;font-size:14px}
 /* checklist */
@@ -310,6 +318,17 @@ table#cmp th.on{background:var(--accent);color:#fff}
     <a class="vid" href="https://www.youtube.com/watch?v=MSkNuYTVyQE" target="_blank" rel="noopener"><img referrerpolicy="no-referrer" src="https://i.ytimg.com/vi/MSkNuYTVyQE/mqdefault.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="vb"><b>迪士尼遊輪探險號最完整攻略：事前準備、網路、醫護室</b><span class="vm">TEEPR 叭啦叭啦研究室・2026 年 6 月・片長 44:37</span><span class="vs">章節有上船前準備、行李與通關注意事項、船上網路、安全演習、App 教學、購物、Palo Trattoria 餐廳體驗、各式小吃與餐廳、下船教學。同行者牙痛，實際用到船上的醫護室。</span></span></a>
   </div>
   <p class="src">預覽圖是用網址直接顯示 YouTube 的影片縮圖，需要連網，版權屬於各頻道。摘要是依影片標題、說明欄與章節列表整理的，我沒有看過影片內容，也沒有確認旁白語言，只依標題與說明欄是中文來判斷。影片是創作者個人經驗，部分有旅行社或訂房平台的合作連結，不是官方資訊。多數拍的是 4 晚航次，3 晚航次的表演與餐廳輪替可能不同。<span class="tag todo">非官方</span></p>
+  <h3 class="sh" id="igs">近 6 個月的中文 Instagram 貼文</h3>
+  <p class="sub">Instagram 上用「#迪士尼探險號」找到、2026 年 6 月到 10 月發布的貼文，新的排前面。點標題會在新分頁開啟 Instagram。</p>
+  <div class="igs">
+    <div class="ig"><iframe src="https://www.instagram.com/p/DewgS4aGoCN/embed/" title="Instagram 貼文預覽：第一天：佈置房門、收集角色簽名" loading="lazy" scrolling="no" referrerpolicy="no-referrer"></iframe><div class="vb"><a href="https://www.instagram.com/p/DewgS4aGoCN/" target="_blank" rel="noopener"><b>第一天：佈置房門、收集角色簽名</b></a><span class="vm">@seiatravel・2026 年 10 月・圖文貼文</span><span class="vs">第一天用玩具總動員主題佈置房門，當天就拿到唐老鴨、史迪奇、阿拉丁的簽名。作者說船很大，平常會暈船的同行者也沒感覺到開船。</span></div></div>
+    <div class="ig"><iframe src="https://www.instagram.com/p/DeiIqE9D2Xb/embed/" title="Instagram 貼文預覽：上船前要知道的 5 個小提醒" loading="lazy" scrolling="no" referrerpolicy="no-referrer"></iframe><div class="vb"><a href="https://www.instagram.com/p/DeiIqE9D2Xb/" target="_blank" rel="noopener"><b>上船前要知道的 5 個小提醒</b></a><span class="vm">@flora_li_flora・2026 年 10 月・圖文貼文</span><span class="vs">先下載 Disney Cruise Line App 完成註冊；提前一個月線上報到，選早的時段可以早點上船；入境卡出發前與下船前各填一次；船上活動以 App 顯示的時間為準；想多拍照可先在 App 預約官方攝影套餐。</span></div></div>
+    <div class="ig"><iframe src="https://www.instagram.com/p/Db5h9jOo8xv/embed/" title="Instagram 貼文預覽：帶媽媽搭船：登船當天的流程" loading="lazy" scrolling="no" referrerpolicy="no-referrer"></iframe><div class="vb"><a href="https://www.instagram.com/p/Db5h9jOo8xv/" target="_blank" rel="noopener"><b>帶媽媽搭船：登船當天的流程</b></a><span class="vm">@amber_madam・2026 年 8 月・圖文貼文</span><span class="vs">11 點到港口先交行李，再辦手續、安檢、上船。下午全員上船後有安全演習，一定要到，集合區域號碼印在房卡上。晚餐每天輪不同餐廳。作者住的是禮賓房，和陽台房的待遇不同。</span></div></div>
+    <div class="ig"><iframe src="https://www.instagram.com/p/DZbnd0wE_cN/embed/" title="Instagram 貼文預覽：迪士尼郵輪的花費分享" loading="lazy" scrolling="no" referrerpolicy="no-referrer"></iframe><div class="vb"><a href="https://www.instagram.com/p/DZbnd0wE_cN/" target="_blank" rel="noopener"><b>迪士尼郵輪的花費分享</b></a><span class="vm">@smallchin・2026 年 6 月・圖文貼文</span><span class="vs">作者出發前不到一週才在訂房平台訂到快閃優惠，分享 5 天 4 夜海景陽台房與 4 天 3 夜內艙房的每人價格，以及下船當天住新加坡飯店的安排。價格是作者當時的情況，不代表現在訂得到。</span></div></div>
+    <div class="ig"><iframe src="https://www.instagram.com/p/DZUh_C-k5rz/embed/" title="Instagram 貼文預覽：Day 1：開箱陽台海景房" loading="lazy" scrolling="no" referrerpolicy="no-referrer"></iframe><div class="vb"><a href="https://www.instagram.com/p/DZUh_C-k5rz/" target="_blank" rel="noopener"><b>Day 1：開箱陽台海景房</b></a><span class="vm">@ariel_chen0404・2026 年 6 月・圖文貼文</span><span class="vs">登船 30 天前可在 App 線上報到並選登船時間，作者選到 13:00。提早一個多小時到，先託運行李、和船頭拍照，回來就直接登船。上船後先去 7 樓船尾玩小遊戲、買 Wi-Fi，再到 17 樓自助餐吃第一餐。</span></div></div>
+    <div class="ig"><iframe src="https://www.instagram.com/p/DZC09BBCUJ8/embed/" title="Instagram 貼文預覽：Day 1：陽台房怎麼選位置" loading="lazy" scrolling="no" referrerpolicy="no-referrer"></iframe><div class="vb"><a href="https://www.instagram.com/p/DZC09BBCUJ8/" target="_blank" rel="noopener"><b>Day 1：陽台房怎麼選位置</b></a><span class="vm">@katherine.la.vie・2026 年 6 月・圖文貼文</span><span class="vs">在官網訂陽台房，可以自己選樓層與位置。作者選靠近電梯，覺得隔音沒問題。房間分面向花園舞台與面海兩種，面舞台的整天有活動比較吵，面海的景色與採光好。</span></div></div>
+  </div>
+  <p class="src">預覽是直接嵌入 Instagram 的貼文畫面，需要連網，內容版權屬於各帳號；如果預覽是空白的，點標題到 Instagram 看。摘要是依貼文的文字說明整理的，沒有逐張看過照片。這些是個人帳號分享的親身經驗，多數搭的是 4 晚航次，有些住禮賓房，不是官方資訊。<span class="tag todo">非官方</span></p>
   <div>
     <h3 class="sh" id="plan-title">逐日行程</h3>
     <div class="ctl" style="margin-top:6px"><button class="mini" id="open-all">全部展開</button><button class="mini" id="close-all">全部收合</button></div>
