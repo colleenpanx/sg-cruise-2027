@@ -306,7 +306,7 @@ table#cmp th.on{background:var(--accent);color:#fff}
     <button type="button" class="segb" data-mode="early" aria-pressed="true">前一天先飛（週日出發）<span class="pill">建議</span></button>
     <button type="button" class="segb" data-mode="same" aria-pressed="false">登船當天飛（週一出發）</button>
   </div>
-  <label class="optchk"><input type="checkbox" class="onb-on"><span>把船上加購（可選，<span class="onb-amt"></span>）加進合計<small style="display:block;font-weight:400;color:var(--muted);margin-top:2px">預設包含三項，都是 2 人的預估：Wi-Fi 1 台 × 3 天 US$90（約 TWD 2,970）、特色餐廳一次 US$110（約 TWD 3,630）、紀念品 US$100（約 TWD 3,300）</small></span></label>
+  <label class="optchk"><input type="checkbox" class="onb-on"><span>加上船上加購 <span class="onb-usd"></span>（可選）<small style="display:block;font-weight:400;color:var(--muted);font-size:13px;margin-top:2px">Wi-Fi＋特色餐廳＋紀念品，<span class="onb-twd"></span></small></span></label>
   <div class="plans" id="plans"></div>
   <h3 class="sh">同樣兩個方案，改搭商務艙</h3>
   <p class="sub">班機一樣是華航 CI 753 去、CI 754 回，只把機票換成商務艙，其餘項目不變。出發與回程都可以用貴賓室，說明在第 4 步「商務艙貴賓室」。</p>
@@ -1058,7 +1058,7 @@ function annotateSGD(){
   const rate=+$("sgd").value||0, root=document.querySelector("main");
   const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT), nodes=[];
   while(w.nextNode()) nodes.push(w.currentNode);
-  const re=/S\$\s?(\d[\d,]*)(?:–(\d[\d,]*))?/g;
+  const re=/(?<!U)S\$\s?(\d[\d,]*)(?:–(\d[\d,]*))?/g;
   nodes.forEach(nd=>{
     const pe=nd.parentElement;
     if(!pe||pe.closest("script,style,dt,#rows,#fx-need,.cost,.twd,select,th")) return;
@@ -1102,6 +1102,8 @@ function calc(){
   const ms=+$("meals").value, rs=+$("ride").value, ts=+$("ticket").value*2;
   const meals=ms*sgd, ride=rs*sgd, ticket=ts*sgd;
   const onb=onbOn?(+$("onb").value||0)*fx:0;
+  document.querySelectorAll(".onb-usd").forEach(e=>e.textContent=`US$${+$("onb").value||0}`);
+  document.querySelectorAll(".onb-twd").forEach(e=>e.textContent=`約 TWD ${fmt((+$("onb").value||0)*fx)}`);
   document.querySelectorAll(".onb-amt").forEach(e=>e.textContent=`US$${+$("onb").value||0}，約 TWD ${fmt((+$("onb").value||0)*fx)}`);
   const all=cruise+tip+air+hotel0+hotel+meals+ride+ticket+onb;
   $("rows").innerHTML=[["郵輪陽台房（2 人，含稅）",cruise],["小費（2 人，3 晚）",tip],["機票（2 人，含稅）",air],["登船前一晚飯店（週日，含稅）",hotel0],["下船後飯店（週四，含稅）",hotel],[`岸上餐飲（S$${ms}，估計）`,meals],[`Grab 車資（S$${rs}，估計）`,ride],[`景點門票（S$${ts}）`,ticket],[`船上加購（US$${+$("onb").value||0}，可選，${onbOn?"已勾選":"未勾選"}）`,onb]]
