@@ -336,6 +336,8 @@ table#cmp th.on{background:var(--accent);color:#fff}
     <h3 class="sh" id="plan-title">逐日行程</h3>
     <div class="ctl" style="margin-top:6px"><button class="mini" id="open-all">全部展開</button><button class="mini" id="close-all">全部收合</button></div>
   </div>
+  <div class="seg" role="group" aria-label="選擇行程"><button type="button" class="segb" data-plan="1" aria-pressed="true">行程一（1/18 上船）</button><button type="button" class="segb" data-plan="2" aria-pressed="false">行程二（2/1 上船）</button></div>
+  <div class="seg" role="group" aria-label="出發方式"><button type="button" class="segb" data-mode="same" aria-pressed="true">登船當天飛（週一出發）</button><button type="button" class="segb" data-mode="early" aria-pressed="false">前一天先飛（週日出發）<span class="pill">建議</span></button></div>
   <div id="days" style="display:flex;flex-direction:column;gap:10px"></div>
   <details>
     <summary><span class="d">這個方案的注意事項</span><span class="s" id="notes-count"></span></summary>
@@ -411,7 +413,7 @@ table#cmp th.on{background:var(--accent);color:#fff}
     <tr><td>金沙購物中心、螺旋橋、魚尾獅公園</td><td>購物餐廳與濱海灣步行景點</td><td>戶外免費，營業時間未查</td><td>一般資訊</td></tr>
     </tbody>
   </table></div>
-  <p class="src">兩場燈光秀建議挑一場：登船當天飛的版本週四看 19:45 的 Garden Rhapsody；前一天先飛的版本週日晚上先看 Spectra，週四就只看 Garden Rhapsody。官網只列過去期間的 Garden Rhapsody 時間，要再確認。濱海灣花園有輪椅租借（09:00–20:30）與園區接駁車（09:00–21:00，每 10 分鐘一班，繞行 Bayfront 地鐵站出口、Active Garden 與 Flower Dome），接駁車需購票。</p>
+  <p class="src">兩場燈光秀建議挑一場，週四晚上看 19:45 的 Garden Rhapsody 或 20:00 的 Spectra。前一天先飛的版本，週日晚上還有體力也可以先去看 Spectra。官網只列過去期間的 Garden Rhapsody 時間，要再確認。濱海灣花園有輪椅租借（09:00–20:30）與園區接駁車（09:00–21:00，每 10 分鐘一班，繞行 Bayfront 地鐵站出口、Active Garden 與 Flower Dome），接駁車需購票。</p>
 </section>
 
 <section id="sec-cost">
@@ -558,7 +560,13 @@ table#cmp th.on{background:var(--accent);color:#fff}
     <label for="hotel0">登船前一晚飯店（週日，含稅，新台幣）
       <select id="hotel0">
         <option value="0" selected>不住（登船當天飛）</option>
-        <optgroup label="預設：濱海灣金沙（1/17 與 1/31 同價）">
+        <optgroup label="預設：近郵輪中心的折衷選擇（1/17、1/31）">
+          <option value="5807">Orchid Hotel 豪華雙床房（兩張單人床），5,807</option>
+          <option value="5999">Carlton City 豪華特大雙人床或雙床房，5,999</option>
+          <option value="7721">Amara 豪華雙床房（1/17），7,721</option>
+          <option value="7797">Oasia Downtown 高級雙人或雙床房（1/17），7,797</option>
+        </optgroup>
+        <optgroup label="濱海灣金沙（1/17 與 1/31 同價）">
           <option value="36690">濱海灣金沙 花園景雙加大雙人床房，36,690</option>
           <option value="38218">濱海灣金沙 市景雙加大雙人床房，38,218</option>
         </optgroup>
@@ -602,6 +610,9 @@ table#cmp th.on{background:var(--accent);color:#fff}
 
 <section id="sec-hotel">
   <div><h2>住宿比較 <small>第 5 步</small></h2><p class="sub">預設住濱海灣金沙，所有合計都用金沙計算。浮爾頓酒店與 The Clan Hotel 留作備選，收在下方。價格是 2 人、雙床房，取自 Booking.com，全部是含稅價。</p></div>
+  <div class="seg" role="group" aria-label="選擇行程"><button type="button" class="segb" data-plan="1" aria-pressed="true">行程一（1/18 上船）</button><button type="button" class="segb" data-plan="2" aria-pressed="false">行程二（2/1 上船）</button></div>
+  <div class="seg" role="group" aria-label="出發方式"><button type="button" class="segb" data-mode="same" aria-pressed="true">登船當天飛（週一出發）</button><button type="button" class="segb" data-mode="early" aria-pressed="false">前一天先飛（週日出發）<span class="pill">建議</span></button></div>
+  <p class="card" id="stay-sum"></p>
   <div class="hotels">
     <article class="hotel wide"><img src="img/mbspool.jpg" alt="濱海灣金沙空中花園的無邊際泳池" loading="lazy"><div class="in">
       <h3>濱海灣金沙<span class="pill">預設</span></h3><div class="pr">36,834 起<small class="m">含稅。週四 1/21、2/4 雙加大雙人床房，房價 30,721 ＋ 稅 6,113</small></div>
@@ -648,6 +659,19 @@ table#cmp th.on{background:var(--accent);color:#fff}
     </tbody>
   </table></div>
   <p class="src">含稅價 = Booking.com 顯示的房價加稅費。稅費約為房價的 19.9%，浮爾頓酒店依折扣前價格計稅，所以稅費看起來較高。標「≈」的是我用同一稅率推算，沒有逐一確認。金沙的雙床房是兩張加大雙人床，不是單人床。金沙整修公告：2027/1/6 到 2028/6/30 分階段整修，大廳與入口區自 1/6 起，空中花園與無邊際泳池自 5 月起，兩個行程的入住日都在整修期間，請向飯店確認。浮爾頓酒店頁面只列 1 間餐廳，不代表館內只有 1 間。早餐價是 Booking.com 顯示價，沒有確認是否每人計價。車程取自 Google 地圖，沒有計入路況。</p>
+  <h3 class="sh" id="sunday-hotel">前一天先飛：週日住哪裡（近郵輪中心的平價選擇）</h3>
+  <p class="sub">折衷做法：週日不住金沙，改住郵輪中心附近、有雙床房的四星飯店，隔天搭車約 10 分鐘上船；週四下船後再住金沙。第 2 步的合計用第一列的 Orchid Hotel 計算。</p>
+  <div class="wrap"><table>
+    <thead><tr><th>飯店</th><th>到郵輪中心</th><th>評分</th><th>雙床房型</th><th>1/17（日）含稅</th><th>1/31（日）含稅</th></tr></thead>
+    <tbody>
+    <tr class="best"><td>Orchid Hotel<span class="pill">預設</span><small class="m">丹戎巴葛</small></td><td>2.1 公里</td><td class="num">8.9</td><td>豪華雙床房<small class="m">兩張單人床</small></td><td class="num">5,807</td><td class="num">5,807</td></tr>
+    <tr><td>Carlton City Hotel<small class="m">丹戎巴葛</small></td><td>2.1 公里</td><td class="num">8.7</td><td>豪華特大雙人床或雙床房<small class="m">訂房時要指定兩張單人床</small></td><td class="num">5,999</td><td class="num">5,999</td></tr>
+    <tr><td>Amara Singapore<small class="m">丹戎巴葛</small></td><td>2.1 公里</td><td class="num">8.7</td><td>豪華雙床房<small class="m">兩張單人床</small></td><td class="num">7,721</td><td class="num">8,435</td></tr>
+    <tr><td>Oasia Hotel Downtown<small class="m">丹戎巴葛</small></td><td>2.0 公里</td><td class="num">8.9</td><td>高級雙人或雙床房<small class="m">訂房時要指定兩張單人床</small></td><td class="num">7,797</td><td class="num">8,576</td></tr>
+    <tr><td>濱海灣金沙<small class="m">對照</small></td><td>2.0 公里</td><td class="num">9.6</td><td>花園景雙加大雙人床房</td><td class="num">36,690</td><td class="num">36,690</td></tr>
+    </tbody>
+  </table></div>
+  <p class="src">Booking.com，2026/11/15 查詢，2 人 1 間、住 1 晚，價格是頁面標示「含稅費與其他費用」的最低價。距離是 Booking.com 顯示到郵輪中心的直線距離，不是車程。我沒有查這幾間的入住與退房時間、能否免費取消、房間大小，也沒有看住客評論的內容；Carlton City 最低價那一列沒有顯示床型。訂房前請再確認。<span class="tag todo">待確認</span></p>
   <details>
     <summary><span class="d">更多飯店照片</span><span class="s">共 8 張：浮爾頓酒店 3 張、金沙 4 張、The Clan 1 張</span></summary>
     <div class="body"><div class="photos">
@@ -681,7 +705,7 @@ table#cmp th.on{background:var(--accent);color:#fff}
     <details open><summary><span class="d">訂位當天</span><span class="s" data-grp="1">4 項　每完成一筆就截圖，確認信也存進手機相簿</span></summary><div class="body"><ul class="chk">
       <li><label><input type="checkbox" data-k="bk-cruise"><span>訂郵輪，截圖訂位確認頁與訂位編號<span class="tag cam">截圖</span></span></label></li>
       <li><label><input type="checkbox" data-k="bk-air"><span>訂機票，截圖電子機票與訂位代號<span class="tag cam">截圖</span></span></label></li>
-      <li><label><input type="checkbox" data-k="bk-hotel"><span>訂金沙（前一天先飛就訂兩晚：週日與週四），截圖訂房確認與取消期限<span class="tag cam">截圖</span></span></label></li>
+      <li><label><input type="checkbox" data-k="bk-hotel"><span>訂週四的金沙；前一天先飛的話，再訂週日郵輪中心附近的飯店（預設 Orchid Hotel），截圖訂房確認與取消期限<span class="tag cam">截圖</span></span></label></li>
       <li><label><input type="checkbox" data-k="bk-ins"><span>投保含海外醫療的旅遊平安險，確認既有病史的承保條件，截圖保單<span class="tag cam">截圖</span></span></label></li>
     </ul></div></details>
     <details><summary><span class="d">訂位後到出發前一個月</span><span class="s" data-grp="2">7 項</span></summary><div class="body"><ul class="chk">
@@ -772,7 +796,7 @@ table#cmp th.on{background:var(--accent);color:#fff}
 <section id="sec-mom">
   <div><h2>與媽媽同行的注意事項</h2><p class="sub">同行者是你和 70 歲的媽媽。我不知道媽媽的體力與健康狀況，以下依行程中比較吃力的地方整理，請依實際情況取捨。</p></div>
   <ul class="notes">
-    <li><b>登船日太趕：</b>當天飛要 05:30 到桃園機場，等於凌晨 3–4 點出門，下午才上船，班機一延誤就可能趕不上船。第 2 步把「前一天（週日）先飛、金沙住一晚」的版本並排列出，多花約 4 萬台幣，換來從容登船。<span class="tag todo">建議</span></li>
+    <li><b>登船日太趕：</b>當天飛要 05:30 到桃園機場，等於凌晨 3–4 點出門，下午才上船，班機一延誤就可能趕不上船。第 2 步把「前一天（週日）先飛、在郵輪中心附近的平價飯店住一晚」的版本並排列出，行程一 2 人約多 9 千台幣，換來從容登船。<span class="tag todo">建議</span></li>
     <li><b>下船日已排鬆：</b>第 4 天改成上午逛溫室、15:00 入住後午休到傍晚，晚上只看一場燈光秀。金沙到濱海灣花園約 950 公尺，走不動可以叫 Grab（每趟約 S$10，約 TWD 260）或搭園區接駁車（需購票）。濱海灣花園有輪椅租借（09:00–20:30）。<span class="tag todo">建議</span><span class="tag">官網</span></li>
     <li><b>晚餐梯次選早的：</b>船上晚餐通常有 17:45 與 20:15 兩個梯次，訂位時選。選早的梯次，看完表演也不會太晚。<span class="tag todo">非官方</span></li>
     <li><b>房間位置不能選：</b>折扣價由迪士尼指定房間，可能離電梯較遠。船很大（15 層甲板開放給旅客），如果媽媽不方便走遠，要考慮改訂可以自選房位的原價。官網寫各艙等都有無障礙客房。<span class="tag">官網</span><span class="tag todo">待確認</span></li>
@@ -796,35 +820,35 @@ const MODES={same:{name:"登船當天飛",short:"當天飛"},early:{name:"前一
 /* 新幣估計（2 人合計） */
 const RIDE={
   same:[["第 1 天　樟宜機場 → 郵輪中心",30,"25–40。含機場附加費，尖峰與週末晚上較高（非官方）"]],
-  early:[["第 0 天　樟宜機場 → 金沙",30,"25–40。含機場附加費，金沙到機場約 16 公里（非官方）"],["第 1 天　金沙 → 郵輪中心",12,"10–15，車程約 7 分鐘。短程車資是我的推估"]],
+  early:[["第 0 天　樟宜機場 → Orchid Hotel（丹戎巴葛）",30,"25–40。含機場附加費，沿用機場到市區的估計（非官方）"],["第 1 天　Orchid Hotel → 郵輪中心",12,"10–15。Booking.com 顯示直線距離約 2.1 公里，短程車資是我的推估"]],
   common:[["第 4 天　郵輪中心 → 金沙",12,"10–15。短程車資是我的推估，沒有找到來源"],["第 4 天　金沙與濱海灣花園之間",0,"走路約 950 公尺。走不動叫 Grab 每趟約 S$10，沒有算進來"],["第 5 天　金沙 → 樟宜機場",30,"25–35。金沙到機場約 16 公里"]]
 };
 const MEAL={
   same:[],
-  early:[["第 0 天　午餐（機場或金沙購物中心）",30,"每人約 15，推估"],["第 0 天　下午飲料與點心",16,"每人約 8，推估"],["第 0 天　晚餐（一般餐廳）",60,"每人約 30。一般餐廳 20–40（非官方）"],["第 1 天　早餐",20,"每人約 10，飯店外的咖啡店。上船後的餐點含在船費"]],
+  early:[["第 0 天　午餐（麥士威熟食中心）",20,"每人約 10。美食街 8–15（非官方）"],["第 0 天　下午飲料與點心",16,"每人約 8，推估"],["第 0 天　晚餐（牛車水一般餐廳）",60,"每人約 30。一般餐廳 20–40（非官方）"],["第 1 天　早餐",20,"每人約 10，飯店外的咖啡店。上船後的餐點含在船費"]],
   common:[["第 4 天　午餐（花園或商場餐廳）",30,"每人約 15。美食街 8–15、小吃攤 4–8（非官方）"],["第 4 天　下午飲料與點心",16,"每人約 8，推估"],["第 4 天　晚餐（一般餐廳）",60,"每人約 30。一般餐廳 20–40，高級餐廳 80 以上（非官方）"],["第 5 天　早餐",20,"每人約 10，在飯店外的咖啡店。飯店早餐加購較貴"],["第 5 天　機場午餐",30,"每人約 15，推估"]]
 };
 const rows=(o,m)=>[...o[m],...o.common];
 const sumOf=a=>a.reduce((x,r)=>x+r[1],0);
 const DEF={same:{ride:sumOf(rows(RIDE,"same")),meals:sumOf(rows(MEAL,"same"))},early:{ride:sumOf(rows(RIDE,"early")),meals:sumOf(rows(MEAL,"early"))}};
 const PLANS={
-  1:{name:"行程一",range:{same:"1/18（一）→ 1/22（五）",early:"1/17（日）→ 1/22（五）"},tag:"最低價航次",d0:"1/17",d:["1/18","1/19","1/20","1/21","1/22"],sail:598,flight:{same:11315,early:11324},biz:{same:31766,early:31775},hotel:36834,hotel0:36690,
+  1:{name:"行程一",range:{same:"1/18（一）→ 1/22（五）",early:"1/17（日）→ 1/22（五）"},tag:"最低價航次",d0:"1/17",d:["1/18","1/19","1/20","1/21","1/22"],sail:598,flight:{same:11315,early:11324},biz:{same:31766,early:31775},hotel:36834,hotel0:5807,
      points:["陽台房最低價，避開農曆春節","機票與飯店都比行程二便宜","1 月雷陣雨較多，要帶傘"],
      notes:[
       ["最低價航次","這是我讀到的陽台房最低價，2 人含稅含小費約 TWD 4.26 萬。"],
-      ["前一天先飛","1/17（日）同樣搭華航 CI 753，每人來回 11,324，和當天飛只差 9 元。多出來的是金沙 1/17 一晚 36,690，加上第 0 天的餐飲與車資，合計約多 4 萬元。"],
+      ["前一天先飛","1/17（日）同樣搭華航 CI 753，每人來回 11,324，和當天飛只差 9 元。週日住郵輪中心附近的 Orchid Hotel，豪華雙床房含稅 5,807，加上第 0 天的餐飲與車資，2 人合計約多 9 千元。週日也住金沙的話是 36,690。"],
       ["額外花費","預估合計已含岸上餐飲、Grab 車資與溫室門票。不含船上酒類、特色餐廳、Wi-Fi、岸上活動與其他景點。"],
       ["日期早於春節","1/18 到 1/22 避開農曆春節，機票與飯店價格都比行程二低。"],
       ["限制條件",TOP],
       ["天氣","1 月是東北季風前段，雷陣雨機率較高，要帶摺疊傘或輕便雨衣。"],
       ["金沙整修","金沙 2027/1/6 起大廳與入口區整修，若住金沙請向飯店確認對入住的影響。"]
      ]},
-  2:{name:"行程二",range:{same:"2/1（一）→ 2/5（五）",early:"1/31（日）→ 2/5（五）"},tag:"春節前夕",d0:"1/31",d:["2/1","2/2","2/3","2/4","2/5"],sail:691,flight:{same:20235,early:22081},biz:{same:37769,early:37778},hotel:36834,hotel0:36690,
+  2:{name:"行程二",range:{same:"2/1（一）→ 2/5（五）",early:"1/31（日）→ 2/5（五）"},tag:"春節前夕",d0:"1/31",d:["2/1","2/2","2/3","2/4","2/5"],sail:691,flight:{same:20235,early:22081},biz:{same:37769,early:37778},hotel:36834,hotel0:5807,
      points:["回程 2/5 是除夕，機票比行程一貴約 9 千到 1 萬","2/1–4 是春節前一週，郵輪價還沒漲","春節氣氛濃，但店家與人潮要留意"],
      notes:[
       ["春節前夕","農曆春節初一是 2/6（我依農曆推算，沒有在官方網站查證），所以 2/5 週五是除夕，回程當天就是除夕。"],
       ["回程機票明顯變貴","同樣的華航 CI 753 去、CI 754 回，1/18–22 是 11,315，2/1–5 是 20,235，多 8,920。Google 把 14:25 的 CI 754 標為豪華經濟艙，一般經濟艙是否有票我沒有確認。商務艙是 37,769，比行程一多 6,003。"],
-      ["前一天先飛","1/31（日）去程搭 CI 753，每人來回 22,081（Google 同樣標示豪華經濟艙），比當天飛貴 1,846。金沙 1/31 一晚 36,690。"],
+      ["前一天先飛","1/31（日）去程搭 CI 753，每人來回 22,081（Google 同樣標示豪華經濟艙），比當天飛貴 1,846。週日住 Orchid Hotel，1/31 豪華雙床房含稅 5,807；也住金沙的話是 36,690。"],
       ["限制條件",TOP],
       ["機票選擇","不考慮廉價航空，全服務航空裡 CI 753 + CI 754 最低，搭配長榮 BR 216 回程是 22,183。想省機票錢可考慮提早回台、不加住 2/4 一晚，但我沒有查 2/4 當天回程的票價。"],
       ["週四飯店","含稅價：浮爾頓酒店傳統雙床房 2/4 一晚 12,695，尊爵庭院雙床房 2/4 沒有列出。The Clan 豪華客房 10,671。金沙 36,834，與 1/21 相同。"],
@@ -858,23 +882,24 @@ function days(p,m){
   const d=p.d, out=[];
   const LG1=cab==="biz"?li("06:15","商務艙：過安檢與證照查驗後上 4 樓，到華航貴賓室（A 側，05:00 開放）吃早餐、休息","o"):"";
   const LG5=cab==="biz"?li("12:15","商務艙：過出境關後到第三航廈南側過境大廳 3 樓的 Marhaba Lounge 吃午餐、休息，有熱食與淋浴間。開放時間視航班而定","o"):li("12:15","機場午餐","g",C("約",15,"／人"));
-  if(m==="early") out.push(day(`第 0 天 ${p.d0}（週日）飛新加坡，住金沙`,"08:20 起飛 → 13:05 抵達 → 入住金沙、休息 → 晚上看 Spectra",[
+  if(m==="early") out.push(day(`第 0 天 ${p.d0}（週日）飛新加坡，住郵輪中心附近`,"08:20 起飛 → 13:05 抵達 → 入住 Orchid Hotel、午休 → 傍晚逛牛車水",[
     li("05:30","抵達桃園機場，辦理 CI 753 報到與託運，以起飛前約 3 小時為準","r"),LG1,
     li("08:20","桃園起飛，華航 CI 753","f"),
     li("13:05","抵達樟宜機場","f"),
     li("13:45","完成入境、領行李","e"),
-    li("14:15","叫車到金沙，約 16 公里","e",C("Grab 約",30)),
-    li("14:45","到金沙寄放行李，在金沙購物中心（The Shoppes）吃午餐。入住時間 15:00","g",C("約",15,"／人")),
-    li("15:30","辦理入住，回房午休，把早起的覺補回來","r"),
-    li("17:30","起床喝杯飲料，在金沙前方水岸散步","g",C("約",8,"／人")),
-    li("18:30","晚餐，金沙購物中心或附近餐廳","g",C("約",30,"／人")),
-    li("20:00","在金沙前方看 Spectra 水舞燈光秀，免費。週日 20:00 與 21:00 兩場","x",L(YT+"LTF65vAmCGM","影片")),
+    li("14:15","叫車到 Orchid Hotel（丹戎巴葛，離郵輪中心約 2.1 公里）","e",C("Grab 約",30)),
+    li("14:45","到飯店辦入住或先寄放行李。入住時間我沒有查，以飯店為準","q"),
+    li("15:00","到麥士威熟食中心（Maxwell Food Centre）吃午餐，有海南雞飯等小吃，從飯店走路約 10 分鐘（距離是我的估計）","g",C("約",10,"／人")),
+    li("16:00","回房午休，把早起的覺補回來","r"),
+    li("17:30","散步到牛車水：看佛牙寺龍華院的外觀，逛寶塔街的店家。寺內開放時間我沒有查","g",C("飲料點心約",8,"／人")),
+    li("18:30","晚餐，在牛車水或丹戎巴葛的餐廳","g",C("約",30,"／人")),
+    li("19:45","自由選擇：還有體力的話，叫車到金沙前方看 20:00 的 Spectra 水舞燈光秀（免費），單程車資約 S$10，沒有算進預估。累了就直接回飯店","x",L(YT+"LTF65vAmCGM","影片")),
     li("20:30","回房休息，整理隔天上船要用的隨身包","r")],true));
-  if(m==="early") out.push(day(`第 1 天 ${d[0]}（週一）上船日`,"睡飽吃早餐 → 退房 → 車程約 7 分鐘到郵輪中心登船",[
+  if(m==="early") out.push(day(`第 1 天 ${d[0]}（週一）上船日`,"睡飽吃早餐 → 退房 → 車程約 10 分鐘到郵輪中心登船",[
     li("報到開放後","線上報到並選擇到港時段（Port Arrival Time），前一晚已在新加坡，可以選較早的時段。開放日期我沒有查到","q"),
     li("07:30","早餐，在飯店外的咖啡店或美食街","r",C("約",10,"／人")),
-    li("09:30","整理行李、退房。金沙退房時間 11:00","g"),
-    li("到港時段前 30 分","叫車到濱海灣郵輪中心，車程約 7 分鐘。計程車、叫車在 2 樓下行李，行李交給行李員","m e",C("Grab 約",12)),
+    li("09:30","整理行李、退房。退房時間以飯店為準","q"),
+    li("到港時段前 30 分","叫車到濱海灣郵輪中心，距離約 2.1 公里，車程估約 10 分鐘。計程車、叫車在 2 樓下行李，行李交給行李員","m e",C("Grab 約",12)),
     li("依到港時段","報到、保安檢查、登船","q",L(YT+"hr1Bp3hCUxc","登船影片")),
     li("上船後","找房間、吃午餐、逛船。登船日的餐廳安排以 Navigator App 為準","q",L(YT+"qcYa-AYYm3Q","船上導覽")),
     li("19:00","晚餐。託運行李約這時候起陸續送到房間，官網說可能到晚上才送達，泳衣、藥品放隨身包","o e")],true));
@@ -914,9 +939,7 @@ function days(p,m){
     li("14:30","回金沙，喝杯飲料、吃點心","g",C("約",8,"／人")),
     li("15:00","辦理入住，回房午休到傍晚，避開最熱的時段","r"),
     li("18:00","晚餐，金沙購物中心或附近餐廳","g",C("約",30,"／人")),
-    m==="early"
-      ? li("19:45","到超級樹叢看 Garden Rhapsody 燈光音樂秀，免費，約 15 分鐘。Spectra 第 0 天已看過","x",L(YT+"o2qzwFneqv8","影片"))
-      : li("19:45","燈光秀挑一場：超級樹叢的 Garden Rhapsody（19:45，約 15 分鐘），或金沙前方的 Spectra（20:00、21:00）。都免費","x",L(YT+"o2qzwFneqv8","Rhapsody 影片")+L(YT+"LTF65vAmCGM","Spectra 影片")),
+    li("19:45","燈光秀挑一場：超級樹叢的 Garden Rhapsody（19:45，約 15 分鐘），或金沙前方的 Spectra（20:00、21:00）。都免費","x",L(YT+"o2qzwFneqv8","Rhapsody 影片")+L(YT+"LTF65vAmCGM","Spectra 影片")),
     li("20:30","回房休息。金沙的無邊際泳池僅限住客，開放時間要向飯店確認","q")],true));
   out.push(day(`第 5 天 ${d[4]}（週五）返台`,"14:25 樟宜起飛 → 19:05 抵達桃園",[
     li("07:00","早餐，在飯店外的咖啡店或美食街","r",C("約",10,"／人")),
@@ -927,7 +950,7 @@ function days(p,m){
     LG5,
     li("14:25","樟宜起飛，華航 CI 754","f"),
     li("19:05","抵達桃園","f")]));
-  return out.join("")+`<p class="src">時間軸以金沙為例，住浮爾頓酒店走去金沙約 24 分鐘，住 The Clan 約 25 分鐘。${m==="early"?"":"登船當天飛，航班延誤可能趕不上登船。"}實際上下船時段以迪士尼訂位後寄來的文件與 Navigator App 為準。費用標籤的台幣依試算表的新幣匯率換算。</p>`;
+  return out.join("")+`<p class="src">下船後的時間軸以金沙為例，住浮爾頓酒店走去金沙約 24 分鐘，住 The Clan 約 25 分鐘。${m==="early"?"":"登船當天飛，航班延誤可能趕不上登船。"}實際上下船時段以迪士尼訂位後寄來的文件與 Navigator App 為準。費用標籤的台幣依試算表的新幣匯率換算。</p>`;
 }
 function total(p,m,c){
   const fx=+$("fx").value, tip=+$("tip").value, sgd=+$("sgd").value, tk=+$("ticket").value;
@@ -940,7 +963,7 @@ function renderPlans(){
     const p=PLANS[n], t=total(p,mode,c), a=total(p,"same",c), b=total(p,"early",c), on=n===cur&&c===cab, nm=p.name+(c==="biz"?" 商務艙":"");
     return `<div class="plan" data-on="${on}"><h3>${nm}<small>${p.range[mode]}　${p.tag}</small></h3>
     <div class="tot"><span class="big">${f(t.sum/2)}</span><span class="src">平均每人（${MODES[mode].name}、${CABS[c]}，含稅、含小費）。2 人合計 ${f(t.sum)}，下列各項是 2 人金額</span></div>
-    <dl><dt>郵輪（含稅含小費）</dt><dd>${f(t.cruise)}</dd><dt>機票（${CABS[c]}，含稅，每人 ${fmt(fare(p,mode,c))}）</dt><dd>${f(t.air)}</dd>${mode==="early"?`<dt>金沙週日一晚（含稅）</dt><dd>${f(t.hotel0)}</dd>`:""}<dt>金沙週四一晚（含稅）</dt><dd>${f(t.hotel)}</dd><dt>岸上餐飲（S$${DEF[mode].meals}）</dt><dd>${f(t.meals)}</dd><dt>Grab 車資（S$${DEF[mode].ride}）</dt><dd>${f(t.ride)}</dd><dt>溫室門票（S$${+$("ticket").value*2}）</dt><dd>${f(t.ticket)}</dd></dl>
+    <dl><dt>郵輪（含稅含小費）</dt><dd>${f(t.cruise)}</dd><dt>機票（${CABS[c]}，含稅，每人 ${fmt(fare(p,mode,c))}）</dt><dd>${f(t.air)}</dd>${mode==="early"?`<dt>Orchid Hotel 週日一晚（含稅）</dt><dd>${f(t.hotel0)}</dd>`:""}<dt>金沙週四一晚（含稅）</dt><dd>${f(t.hotel)}</dd><dt>岸上餐飲（S$${DEF[mode].meals}）</dt><dd>${f(t.meals)}</dd><dt>Grab 車資（S$${DEF[mode].ride}）</dt><dd>${f(t.ride)}</dd><dt>溫室門票（S$${+$("ticket").value*2}）</dt><dd>${f(t.ticket)}</dd></dl>
     <div class="alt"><span>每人：當天飛 <b>${f(a.sum/2)}</b></span><span>前一天飛 <b>${f(b.sum/2)}</b></span><span>差 <b>${f((b.sum-a.sum)/2)}</b></span></div>
     <ul>${(c==="biz"?[`比經濟艙每人多 ${f(fare(p,mode,"biz")-fare(p,mode,"eco"))}`,"桃園與樟宜都可用貴賓室","班機與逐日行程和經濟艙相同"]:p.points).map(x=>`<li>${x}</li>`).join("")}</ul>
     <button class="pick" data-plan="${n}" data-cab="${c}" aria-pressed="${on}">${on?"正在看："+nm:"看"+nm+"的行程"}</button></div>`;
@@ -966,7 +989,7 @@ function renderCmp(){
   h+=`<tr class="tot"><td>平均每人</td>${bz.map(t=>`<td class="num">${fmt(t.sum/2)}</td>`).join("")}</tr>`;
   h+=`<tr><td class="lab">比經濟艙每人多</td>${bz.map((t,i)=>`<td class="num">+${fmt((t.sum-cols[i].t.sum)/2)}</td>`).join("")}</tr></tbody>`;
   $("cmp").innerHTML=h;
-  $("cmp-note").textContent=`藍底欄是目前選的組合。四欄都用金沙、華航 CI 753 + CI 754 計算，上半部是經濟艙，下半部改搭商務艙；台幣依試算表的匯率（1 美元 = ${$("fx").value}、1 新幣 = ${$("sgd").value}）。前一天飛多出的主要是金沙週日一晚，若週日改住 The Clan（1/17 最低價 9,184）可少約 2.7 萬，但房型與床型未確認。`;
+  $("cmp-note").textContent=`藍底欄是目前選的組合。四欄的週四都住金沙、班機都是華航 CI 753 + CI 754，上半部是經濟艙，下半部改搭商務艙；台幣依試算表的匯率（1 美元 = ${$("fx").value}、1 新幣 = ${$("sgd").value}）。前一天飛的週日住郵輪中心附近的 Orchid Hotel（豪華雙床房，含稅 5,807），多出的是這一晚加上第 0 天的餐飲與車資。週日如果也想住金沙（36,690），2 人合計再多 30,883。`;
 }
 function renderExtra(){
   const r=+$("sgd").value||0, tk=+$("ticket").value;
@@ -983,11 +1006,13 @@ function renderExtra(){
 }
 function setMode(m){
   mode=m;
-  document.querySelectorAll(".segb").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.mode===m)));
+  document.querySelectorAll(".segb[data-mode]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.mode===m)));
   showPlan(cur);
 }
 function showPlan(n){
   const p=PLANS[n]; if(!p) return; cur=n;
+  document.querySelectorAll(".segb[data-plan]").forEach(b=>b.setAttribute("aria-pressed",String(+b.dataset.plan===n)));
+  $("stay-sum").innerHTML=`<b>${p.name}・${MODES[mode].name}的住宿：</b>${mode==="early"?`週日 ${p.d0} 住郵輪中心附近的 Orchid Hotel，豪華雙床房含稅 ${f(p.hotel0)}；`:"登船當天飛，週日不用住；"}週四 ${p.d[3]} 下船後住濱海灣金沙，雙加大雙人床房含稅 ${f(p.hotel)}。住宿 2 人合計 ${f((mode==="early"?p.hotel0:0)+p.hotel)}。`;
   $("plan-title").textContent=`${p.name}・${MODES[mode].name}${cab==="biz"?"・商務艙":""}：逐日行程（${p.range[mode]}）`;
   $("days").innerHTML=days(p,mode);
   $("notes").innerHTML=p.notes.map(x=>`<li><b>${x[0]}：</b>${x[1]}</li>`).join("");
@@ -1010,7 +1035,8 @@ function calc(){
   renderPlans(); renderExtra(); refreshCosts();
 }
 ["sail","flight","hotel0","hotel","fx","tip","sgd","meals","ride","ticket"].forEach(i=>{$(i).addEventListener("input",calc);$(i).addEventListener("change",calc)});
-document.querySelectorAll(".segb").forEach(b=>b.addEventListener("click",()=>setMode(b.dataset.mode)));
+document.querySelectorAll(".segb[data-mode]").forEach(b=>b.addEventListener("click",()=>setMode(b.dataset.mode)));
+document.querySelectorAll(".segb[data-plan]").forEach(b=>b.addEventListener("click",()=>showPlan(+b.dataset.plan)));
 $("open-all").addEventListener("click",()=>document.querySelectorAll("#days details").forEach(d=>d.open=true));
 $("close-all").addEventListener("click",()=>document.querySelectorAll("#days details").forEach(d=>d.open=false));
 function route(){const m=/^#plan-([12])$/.exec(location.hash); if(m) showPlan(+m[1]);}
